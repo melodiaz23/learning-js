@@ -43,11 +43,11 @@ Shell -> Text input interface
 	zsh (Z-Shell)
 
 #### Terminal Commands: 
-Pwd -> Location (‘/users/melidiaz’) - Print Working Directory
-Ls -> List Items (‘Folders on melidiaz’)
-Cd -> Change directory (if it is use alone, go to the home directory)
-Cd .. -> ‘Sube’ de carpeta en el directorio
-Cd / -> Root directory 
+**Pwd** -> Location (‘/users/melidiaz’) - Print Working Directory
+**Ls** -> List Items (‘Folders on melidiaz’)
+**Cd** -> Change directory (if it is use alone, go to the home directory)
+**Cd ..** -> ‘Sube’ de carpeta en el directorio
+**Cd /**-> Root directory 
 Cd /Users -> Users directory
 Cd + ‘tab twice’ -> Show carpets with similar names
 ~ -> Indicates that we are currently in the directory ‘melidiaz’
@@ -80,3 +80,10 @@ Repository contains 2 areas:
 
 Important to know that **Git means tracking changes**, not storing files, again and again.
 
+Compare de new commit with the previous commit and only track the changes. 
+
+### Branches & Commits
+
+Working directory/Tree: All the commits inside the working directory are stored inside the _master branch_ (Commit 1, commit 2, commit 3...) 
+
+Branches alow us to create an entire copy of the current state of the master branch. 

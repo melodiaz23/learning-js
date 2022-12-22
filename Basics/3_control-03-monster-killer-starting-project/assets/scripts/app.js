@@ -12,14 +12,35 @@ const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
 const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 
-const enteredValue = prompt('Maximum life for you and the monster', '100');
+function getMaxLifeValues(){
+  const enteredValue = prompt('Maximum life for you and the monster', '100'); 
+  // prompt(message, defaultValue)
 
-let choseenMaxLife = parseInt(enteredValue);
-let battleLog = [];
-
-if (isNaN(choseenMaxLife) || choseenMaxLife <= 0){
-  choseenMaxLife = 100;
+  const parsedvalue = parseInt(enteredValue); 
+  // 'ParseInt' converts its first argument to a string,
+  // parses that string, then returns and interger or 'NaN'.
+  if (isNaN(parsedvalue) || parsedvalue <= 0){
+    throw {message: 'Invalid user input, not a number!'} // Error handling mechanism.
+    //'Throw' throws and new error, as a number, a string or an object. 
+  }
+  return parsedvalue
 }
+
+let choseenMaxLife
+
+try {
+  choseenMaxLife = getMaxLifeValues();
+} catch (error){
+  console.log(error);
+  choseenMaxLife = 100;
+  alert('You entered something wrong, default value of 100 was used')
+} finally { //Finally to do any cleanup work  
+
+}
+
+let battleLog = [];
+let lastLoggedEntry;
+
 
 let currentMonsterHealth = choseenMaxLife;
 let currentPlayerHealth = choseenMaxLife;
@@ -218,14 +239,16 @@ function healPlayerHandler(){
   endRound();
 }
 
-// For loop: Execute code a certain amount of times (with counter variables). With that we define that a certain part of the code should run any time. 
-// While loop: Execute code as long as a certain condition is true and only if that condition is somehow set to false, exit out of the loop.
+// For loop: Execute code a certain amount of times (with counter variables).
+// With that we define that a certain part of the code should run any time. 
+// While loop: Execute code as long as a certain condition is true and only,
+// if that condition is somehow set to false, exit out of the loop.
 
 function printLogHandler() {
   for (let i = 0; i < 3; i++){
     console.log('--------');
   }
-  let j = 0;
+  let j = 3;
   do {
     console.log(j);
     j++;
@@ -239,9 +262,14 @@ function printLogHandler() {
   // }
   let i = 0
   for (const logEntry of battleLog){
-    console.log(`#${i}`);
-    for (const key in logEntry){
-      console.log(`${key} => ${logEntry[key]}`)
+    if (!lastLoggedEntry && lastLoggedEntry !== 0 || lastLoggedEntry < i){ // If 'lastLoggedEntry' is not set (falsy value)
+      console.log(`#${i}`);
+      for (const key in logEntry){
+        console.log(`${key} => ${logEntry[key]}`)
+      }
+      lastLoggedEntry = i;
+      break; // Break Tells JS, stop the loop execution of the loop.
+      // If we run the code this way, we only see that very first event.
     }
     i++;
   }
