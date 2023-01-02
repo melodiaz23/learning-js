@@ -282,7 +282,70 @@ This estructure alows to **try** a certain code which might fail and then **catc
     }
 
 
+## Resources
 
+[Control Strcutures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+
+[Loops and Iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+
+
+# How JS works
+
+## ES5 Vs. ES6+ Syntax
+
+ES stand for EcmaScript.
+
+We could say Javascript is a specific version of ECMAScript. ECMAScript, in the end is the language being standardized by
+this ecma international body.
+
+Javascript evolved. ES5 was the first real big standard. And in 2015 was released another versión, ES6, also known as ECMAScript 2015; since then more, features have been added and are integrated by browser vendors step-by-step.
+
+### ES5: 
+- Supported in bassically all browser, including old IE. 
+- Only had *var*, not *let* or *const*.
+- Generally same syntax as ES6, but quite some missing features. 
+
+### ES6 (and newer):
+- Supported in mondern browser, can (mostly) be transpiled *(specific term for taking source code written in one language and transforming into another language that has a similar level of abstraction.)* to ES5.
+
+- Many new features help us write cleaner, better & faster code.
+
+- Still under active development.
+
+## var vs let vs const
+
+Available since ever:
+
+**var** --> Creates a variable.
+
+> var only knows **global scope** and **funtion scope**, so a variable created in a function can't be used outside of it.
+
+___
+
+Available since ES6:
+
+**let** --> Changeble, also a variable.
+
+**const** --> Constants.
+
+> let and const don't care abou functions, they care about the curly braces (functions, if statements, for loops, try/catch blocks have curly braces).
+
+### Block Scope
+
+Var are function and global scope.
+
+If we create a varibale between the curly braces with let or const, then the variables are **scoped to that block**.
+
+That give us more conttrol over where our data is available.
+
+Modern JS forces us to write better, cleaner code and forces us be clearer about our intentions.
+
+We still have var but we don't use it anymore.
+
+
+## How JS works
+
+## Weird parts of JS
 
 
 

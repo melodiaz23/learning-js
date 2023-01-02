@@ -28,14 +28,15 @@ function getMaxLifeValues(){
 
 let choseenMaxLife
 
-try {
-  choseenMaxLife = getMaxLifeValues();
-} catch (error){
+try { // We can use Try.. catch or Try.. finally, but always we have to use try
+  choseenMaxLife = getMaxLifeValues(); // IF this fail...
+} catch (error){ // ...This here will execute. 
   console.log(error);
   choseenMaxLife = 100;
   alert('You entered something wrong, default value of 100 was used')
-} finally { //Finally to do any cleanup work  
-
+  // throw error; - If we rethrow, the code theereafter doesn´t execute and ONLY finally will.
+} finally { 
+// The advantage of finally is that it executes even if we do throw and error.
 }
 
 let battleLog = [];
