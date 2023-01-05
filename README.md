@@ -4,6 +4,7 @@ _'Tal vez no sepa lo que haga, pero luzco genial hacíendolo'_
 
 * Dynamic, weakly typed.
 * Compiled at run time.
+* Single threaded -> Can only do one thing at a time.
 
 ## Window.prompt
 
@@ -25,10 +26,13 @@ Instructs the browser to display a dialog with an optional message prompting the
 #### For loop
 Execute code a certain amount of times (with counter variables). With that we define that a certain part of the code should run any time. 
 
-	for (let i= 0; i < 3; i++)
-	{
+	for (let i= 0; i < 3; i++){
 	console.log(i);
 	}
+
+    // First part is initialitation (i = 0).
+    // Next part is the condition (i < 3).
+    // Final expresion, iterate our counter (i++).
 
 #### For-of loop
 Execute for every element for every element in an array.
@@ -342,14 +346,135 @@ Modern JS forces us to write better, cleaner code and forces us be clearer about
 
 We still have var but we don't use it anymore.
 
+### [Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+
+If we have:
+
+        console.log(userName);
+        var userName
+
+We get 'undifine'. But if insted of var we put let we get an error:
+
+> ReferenceError: Cannot access 'userName' before initialization
+
+That is because hoisting, a especial feature that means that the javascript engine, the browser, when it loads the script, goes over the entire script and look for things like functions or 
+
+* With var, it pulls the variable declaration to the beginning and assings an initial value of undifine.
+
+* With let and const the browser doesn't initialize the variable to undefined, it just kind of declares it.
+___
+
+Any of the following behaviors may be regarded as hoisting:
+
+- Being able to use a variable's value in its scope before the line it is declared. ("Value hoisting")
+- Being able to reference a variable in its scope before the line it is declared, without throwing a *ReferenceError*, but the value is always undefined. ("Declaration hoisting") -> **Var declaration**, type 2 behaviour.
+- The declaration of the variable causes behavior changes in its scope before the line in which it is declared. -> let, const declarations (lexical declarations), type 3 behavior.
 
 ## How JS works
 
-## Weird parts of JS
+Browser -> Parsing & Execution with a *Javascript engine*. 
+
+* Chrome has v8.
+* Firefox has Spider Monkey. 
+
+The Javascrip Engine consist of two parts: 
+* Interpreter -> Loads our script (reads it), translates it to byte code, and then starts running the script. Also hands off the byte code to the compiler.
+* Compiler (jiT = Just in time compiler)
+
+> Compile refers to the act of converting programs written in high level programming language, which is understandable and written by humans, into a low level binary language understood only by the computer.
+>To compile, we need a compiler.
+
+### The heap
+
+The heap is the 'long term memory'. It stores data in our system memory and manages access to it.
+
+![Image](https://miro.medium.com/max/1400/1*_x4mkpWcBs72s5BcdJe4Wg.webp)
+
+### Call Stack
+
+Is like the 'short term memory'. It manages our program flow (functuion calls and comunication)
+
+The call stack is responsible for keeping the flow of execution for our application. Without it, JavaScript wouldn’t know what to call or when.
+
+### Event Loop
+
+Help us with asynchronous code. Help us with things like event listeners. There is in the **browser**.
+
+### Primitive Vs. Reference Values
+
+Two categories of Types/Values:
+
+* Primitive Values:
+    * Strings
+    * Numbers
+    * Booleans
+    * Null
+    * Undifined
+    * Symbol
+
+This are stored in memory (normally on Stack). Primitive values are copied by value (this means that js create a copy of it)
+
+* Reference values:
+    * Objects
+    * Array
+
+Stored in memory (Heap). Reference values, because they are more complex to manage, if we copy a variable wich holds a reference values, we just copy the reference and not the value.
+
+If we want to have a copy of a reference value: 
+
+        let yetAnotherPerson = { ...person };
+        // What it does is it pulls out all the key-value pairs in person and add them
+        // as new key value pairs to this new object.
+
+Same for arrays: 
+
+    let hobbies = ['Sports'];
+    let moreHobbies = [...hobbies];
+
+If we compare reference values (objects or arrays) with the same information (inside) the result will be false because the refereces values are stored in different places.
+
+> **Useful resource:** [Primitive vs Reference Values](https://academind.com/tutorials/reference-vs-primitive-values)
+
+### Garbage collection
+
+What about the heap and how this memory is managed? --> The garbage collector.
+
+The garbage collector periodically checks Heap for unused objects (objects without references), like this:
+
+    let person = {myName: 'Mel'};
+    person = null;
+
+if the engine detects that {myName: 'Mel'} is not use it anymmore, it will clean this up.
+
+> We should be aware of **memory leaks**, that is when we have some variable or some place where we still hold a reference to an object wich we don't use anymore.  
+
+
+## Functions
+
+>* Functions are these constructs wich allow us to define code on-demand.
+>* Variables and constants created in functions 'belong' to that function --> [Block scope](#block-scope)
+>* CAN take parameter (arguments) and CAN return a value.
+>* Can be called multiple times (with different arguments).
+>* Can be called "directly" and "indirectly".
+
+In a function if we get: 
+
+    function sayHi(name) { ... } // Name is the parameter.
+    .
+    .
+    .
+    sayHi('Max'); // 'Max' is an argument of the fuction. 
 
 
 
+**Parameters** are these variables which you specify between parentheses when defining a function.
+**Arguments** then are the concrete values you pass to a function when calling that function
 
+### Differente ways of creating functions
+### Anonymous functions
+### Callback functiones & functions in functions
+### Default arguments & rest operator
+### Bind() & More
 
 
 
