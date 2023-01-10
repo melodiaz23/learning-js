@@ -15,15 +15,21 @@ Instructs the browser to display a dialog with an optional message prompting the
     prompt(message)
     prompt(message, defaultValue)
 
-
-
 ## If statements and loops
 
 ### Loops
 * Execute code multiple times.
 * Allow to write code repetition in a more dynamic and flexible way. 
 
-#### For loop
+There are: 
+1. [for](#for-loop) 
+2. [for...of](#for-of-loop)
+3. [for...in](#for-in-loop)
+4. [while](#while-loop)
+5. [do...while](#do-while-loop)
+6. [forEach](#foreach)
+
+### For loop
 Execute code a certain amount of times (with counter variables). With that we define that a certain part of the code should run any time. 
 
 	for (let i= 0; i < 3; i++){
@@ -34,7 +40,17 @@ Execute code a certain amount of times (with counter variables). With that we de
     // Next part is the condition (i < 3).
     // Final expresion, iterate our counter (i++).
 
-#### For-of loop
+Another common use for for loop is:
+
+    const names = ['jhon', 'bob', 'mary', 'joe']
+
+    for (let i = 0; i < names.length; i++){
+    console.log(names[0]);
+    }
+
+Another way to do it is with a for-of loop...
+
+### For-of loop
 Execute for every element for every element in an array.
 
 	for (const el of array)
@@ -42,14 +58,31 @@ Execute for every element for every element in an array.
 	console.log(el);
 	}
 
-#### For-in loop
-Allow to execute code for every key in an object.
+e.g:
 
-	for (const key in object)
+     const names = ['jhon', 'bob', 'mary', 'joe']
+
+     for (name of name){ // Is taking each value an assing a name variable
+        console.log(name);
+     }
+
+
+### For-in loop
+Allow to execute code for every key in an **object**.
+
+	for (const key in object) // is looping through each key and logging the value of each.
 	{
     console.log(key);
     console.log(obj[key]);
 	}
+
+    const user = {
+        firstname: 'Jhon',
+        lastName: 'Doe'
+    }
+    for (key in user){
+        console.log(user[key]);
+    }
 
 
 ### While loop
@@ -58,6 +91,32 @@ Execute code as long as a certain condition is true and only if that condition i
 	while (isLoggedIn){
 	…
 	}
+
+e.g: 
+
+    let i = 0
+    while (i < 10){
+        console.log(i);
+        i++; // If we didn't increment i, it will create an infinite loop
+    }
+
+### Do while loop
+
+    let i = 0
+    do {
+      i++;
+      console.log(i);
+    } while (i < 10) // Check for the condition after the do statement has run.
+
+### forEach
+
+    const animals =['cat','dog','horse','sheep','bird'];
+
+    animals.forEach(animal =>{
+        console.log(animal)
+    })
+
+Resources: [JavaScript Loops Made Easy](https://www.youtube.com/watch?v=Kn06785pkJg)
 
 **_Nested Loop -Excercise-_**
 
@@ -160,25 +219,26 @@ e.g:
     }
 
 In the console: 
->0
-1
-2
-3
-4
+> 0
+> 1
+> 2
+> 3
+> 4
 
 Using **break**, we get: 
 
     for (let i = 0; i<5; i++){
-        if (i ===3){
-            break;
+        console.log ('Test' + i)
+        if (i ===3){// if its equal to 3, then stop.
+            break; 
         }
-        console.log(i);
     }
 
 In the console: 
->0
-1
-2
+> Test0
+> Test1
+> Test2
+> Test3
 
 With **continue**:
 
@@ -191,9 +251,9 @@ With **continue**:
 
 In the console: 
 >0
-1
-2
-4
+>1
+>2
+>4
 
 ##### Quiz: Loops and Breacks
 
@@ -286,11 +346,11 @@ This estructure alows to **try** a certain code which might fail and then **catc
     }
 
 
-## Resources
+**Resources:**
 
-[Control Strcutures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+* [Control Strcutures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
 
-[Loops and Iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+* [Loops and Iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
 
 
 # How JS works
@@ -466,12 +526,52 @@ In a function if we get:
     sayHi('Max'); // 'Max' is an argument of the fuction. 
 
 
-
 **Parameters** are these variables which you specify between parentheses when defining a function.
 **Arguments** then are the concrete values you pass to a function when calling that function
 
+**Functions are objects**
+
+To prove that, if we run:
+
+    console.dir(startGame) // Dir give us a different insight into objects.
+
+The result is: 
+
+    ƒ startGame()
+    arguments: null
+    caller: null
+    length: 0
+    name: "startGame"
+    prototype: {constructor: ƒ}
+    [[FunctionLocation]]: app.js:3
+    [[Prototype]]: ƒ ()
+
+This show up key value pairs and all are properties of the function. And the end is basically a special type of object.
+
 ### Differente ways of creating functions
+
+* Store functions in variables or constants:
+
+    const start = function startGame(){ 
+    console.log('Game is starting...');
+    }; //Because the function is on the right side, the convention is to add the semicolon ;
+    startGameBtn.addEventListener('click', start);
+
+> * In that case, we use the function as an expression insted of as a declaraction/statement.
+> * Expresions are essentially the thing that yield a value, something we could store.
+> * Function expression also still take arguments and still return values that didn't change.
+
+
 ### Anonymous functions
+
+When we omit the name of the function like this: 
+
+    const start = function() { 
+    console.log('Game is starting...');
+    };
+    startGameBtn.addEventListener('click', start);
+
+
 ### Callback functiones & functions in functions
 ### Default arguments & rest operator
 ### Bind() & More
