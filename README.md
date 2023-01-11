@@ -571,8 +571,37 @@ When we omit the name of the function like this:
     };
     startGameBtn.addEventListener('click', start);
 
+* Is usefull if we're gonna use that funnction just ONE time. 
+* We assign a name to an anonymous function because the name is using for debugging. It's optional.
+
+> * A different way of defining function is with the keyword arrow [=>].
+> * Always have to be store in some variable or use it in a place where it would use an anonymous function.
+
+**General Sintax Arrow Fuctions**
+
+    (arg1, arg2) => {...}
+    // Another way to write it if: 
+    () => {...} 
+    // No arguments/parameters
+    //Empty pare of parentheses is required.
+    arg => {...}
+    // With ONE argument, parentheses can be omitted.
+    (a, b) => a + b
+    //Exactly ONE expresion in function body
+    //Curly braces can be omitted
+    // If we omit the curly braces, we also must remove any return keyword.
+    // The result of this calculation will then always be returned.
+
+
+
 
 ### Callback functiones & functions in functions
+
+Different way of defining funtion:
+
+
+  
+
 ### Default arguments & rest operator
 ### Bind() & More
 
