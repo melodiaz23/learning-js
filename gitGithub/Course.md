@@ -110,8 +110,8 @@ Working directory/Tree: All the commits inside the working directory are stored 
 
 6. On terminal of VSC:
 
-		git status
-		git init // for initialize if it's teh firts time and  we get some error
+		git status // Check working directory & staging area status
+		git init // for initialize if it's the firts time (create empty git repository)
 
 > Command + Shift + Punto. --> To watch hide folders
 
@@ -120,6 +120,8 @@ Then...
 	git add <file>...
 	// or...
 	git add . //whit the dot notation this will simply track all our files in the project folder.
+
+>=> Whenever we add a file to the staging area throughout the project, and then also commit these changes, then these files will remain in the staging area.
 
 For commit...
 
@@ -134,7 +136,8 @@ For commit...
 
 8. If we need to know the ID for each commit we create: 
 
-		git log
+		git log 
+		// display all commits of current branch 
 
 The result is something like this: 
 
@@ -162,6 +165,7 @@ e.g:
 we write: 
 
 	git checkout 4f1a3e7202717fa29fb2f041882a11210c2c6177
+	// We can check an especial commit
 	// or...
 	git checkout master // to get back to the master branch.
 
@@ -173,7 +177,7 @@ Branch --> set of specific code changes.
   * Our working directory.
   * All the commits and the commits are in a current master branch. 
 
-> The master branch is the default name for the first branchwe create in Git projects. 
+> The master branch is the default name for the first branch we create in Git projects. 
 
 To know **all the branches we have** in a current project and where we are:
 
@@ -181,11 +185,13 @@ To know **all the branches we have** in a current project and where we are:
 
 to create a new branch: 
 
-	git branch second-branch
+	git branch branch-name
+	// or...
+	git switch branch-name
 
 to acces to one branch, we use **checkout**: 
 
-	git checkout second-branch
+	git checkout branch-name 
 
 ... or another way to create a new branch:
 
@@ -196,6 +202,8 @@ If we create a new file, this is only create in that new branch. If we want to a
 
 	git merge nameofthebranchwewanttomerge
 
+> we need to switch to our master before merge.
+
 ### What is head?
 
 Is the last commit and becautse we checkout the branch, is that specific branch wich idirectly points to the last commit in this branch.
@@ -204,7 +212,9 @@ Is the last commit and becautse we checkout the branch, is that specific branch 
 
 #### Detached HEAD
 
-It is when a commit it's not related to a specific branch. 
+It is when a commit it's not related to a specific branch. -> A commit is in detached head state.
+
+Explanation: [Using Git: What is a "Detached HEAD"?](https://www.youtube.com/watch?v=GN36mrrM12k)
 
 ### Branches and "git switch"
 
@@ -221,16 +231,20 @@ And, to create a new branch:
 To check wich files are currently part of our staging area: 
 
 	git ls-files
+	//List data in staging area
 
-If we delate a file, we can use: 
+If we delate a file (already part of previous commit), we can use: 
 
-	git rm [file name we're going to remove]
+	git rm <file name we're going to remove> 
+	// run after file was delected fron working directory
+	// to also remove it from staging area
 	// or...
-	git add [file name we're going to remove]
+	git add [file name we're going to add] or .
+	// dot to add all working directory files to staging area
 
 Once is deleted, we can commit the change.
 
-To go back to the status of the latest commit (to undo a change, not stage for the commmit):
+To go back to the status of the latest commit (to undo a change, not stage for the commmit - unstaged changes):
 
 	git checkout [name of the file we want to refer to the head/latest commit]
 	//Or if we have some files and we want to go back to the head status of all commits on the currrent branch
@@ -241,7 +255,8 @@ Another option, with a new command from Git is:
 	git restore [name of the file or dot .]
 
 > Adding two dashes [--] tell Git that we don't refer to any specific branch, e.g:
-	git checkout --
+	git checkout -- 
+	// revert changes in tracket files 
 
 If we have and untracked file we want to get rid of:
 
@@ -253,7 +268,8 @@ If we have and untracked file we want to get rid of:
 
 Once we add the files to the stage area... if we want to undo that changes, we need to bring back the latest commit, tha latest stage of the file, and copy into the staging area: 
 
-	git reset [name of the file]
+	git reset [name of the file] 
+	// remove flie(s) from staging area
 	// Copy the latest committed change of a file into the staging area
 	//then we must to use checkout.
 	git checkout [name of the file]
@@ -261,12 +277,94 @@ Once we add the files to the stage area... if we want to undo that changes, we n
 Another option is with restore command. It help us to restore and earlier stage of the project.
 In the case we want to restore the version prior:
 
-	git restore --staged [name of the file] // Restore is more explicit than reset.
+	git restore --staged [name of the file] 
+	// Restore is more explicit than reset.
+	// Also remove file(s) from staging area
 	// and then
 	git checkout [name of the file]
 
-
-
-
 #### Latest commits
+
+> Git reset helps us to reset the head of our branch (undo commits).
+
+For example, to go back to the prior version of our last commit:
+
+	git reset --soft HEAD~1
+	//head because is the one that should be reset
+	// and ~1 according of the steps you want to go back.
+
+With this, the commit is remove, the file is still in the working directory and in the staging area.
+
+Another way is: 
+
+	git reset HEAD~1 //The default way
+
+That way, the file it will remove from the commit and the staging area. It will still remain on the working directory.
+
+The hard way to reset the commits are: 
+
+	git reset --hard HEAD~1
+
+It will remove the commits, the files on the staging area and the file from the working directory.
+
 #### Branches
+
+	git branch
+	// To check the branches we have.
+
+To delete branches we use -d or -D. Small d will only allow us to delete branches if we merge the branches already. Capital D, will force the deletion.
+
+	git branch -D <File to delete>
+	// or...
+	git branch -d <file to delete>
+
+We can also delete multiple branches with one command, with one space between the name of the files.
+
+	git branch -D <file> <file>
+
+## Git stash
+
+Stash is like a internal memory, where we can save uncommitted unstaged changes.
+
+	git stash // To get back in our **latest** commit
+
+	git stash apply 
+	// To get back to our unstage change.
+
+	git stash list // To get an overview of all our stash changes.
+	// stash@{0} is allways the latest.
+
+	git stash apply 1
+	// The number depends on what data stash we want to access.
+
+If we access to some of this unstage data, we need to do something: stash it again, add the changes and commit these. 
+
+If we want, stash the changes, again: 
+
+	git stash // In this case, with git stash, to come back
+	// now we will have a new file added to the working directory. 
+
+To add messages to our stashes: 
+
+	git stash push m- "Message we want to let"
+	// m- for message.
+
+To add one of the files to the project:
+
+	git stash pop 0
+	//The number depends on the index nunber we want to add to our project.
+	// This just means that we want to add this staged commit to our project
+	// and remove it from the stash. 
+
+We could also use git stash apply. With that, the data would still remain in the stash. With stash pop, the data is deleted from the stash and apply to the project. 
+
+To delete individual entries:
+
+	git stash drop 0
+	// Number according to the index number.  
+
+To clear the enter stash
+
+	git stash clear
+
+## Git Restore
