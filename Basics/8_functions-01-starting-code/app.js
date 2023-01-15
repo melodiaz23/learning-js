@@ -76,7 +76,7 @@ startGameBtn.addEventListener('click', () => {
     console.log(`Player Selection: ${playerSelection}`);
     console.log(`Computer Choice: ${computerChoice}`);
     const winner = getWinner(computerChoice, playerSelection);
-    connsole.log(winner);
+    console.log(winner);
 }); 
 
 // const start = function() { // Anonymous function
