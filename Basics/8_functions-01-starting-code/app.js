@@ -20,7 +20,7 @@ const getPlayerChoice = () => {
     if (selection !== ROCK &&
     selection !== PAPER && 
     selection !== SCISSORS){
-    alert(`Invalid choice! we chose ${DEFAULT_USER_CHOICE} for you`);
+    alert(`Invalid choice! we chose ${DEFAULT_USER_CHOICE} for you.`);
     return DEFAULT_USER_CHOICE 
     }
     return selection;
@@ -76,7 +76,18 @@ startGameBtn.addEventListener('click', () => {
     console.log(`Player Selection: ${playerSelection}`);
     console.log(`Computer Choice: ${computerChoice}`);
     const winner = getWinner(computerChoice, playerSelection);
+    let message = `You picked ${playerSelection}, computer picked ${computerChoice} therefore you `;
+    if (winner === RESULT_DRAW){
+        message = message + 'have a DRAW.';
+    } else if (winner === RESULT_PLAYER_WINS){
+        message = message + 'WON.'
+    } else {
+        message = message + 'LOST.';
+    }
     console.log(winner);
+    alert(message); // This will show the user that the game is over
+    // and we have a draw,, won or lost.
+    gameIsRunning = false;
 }); 
 
 // const start = function() { // Anonymous function

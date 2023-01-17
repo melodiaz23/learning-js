@@ -599,13 +599,16 @@ Using arrow functions, curly braces can have two meanings:
 * Mark the function body (degault form)
 * Create an object wich you want to return (in shorter function body form)
 
+### Default arguments & rest operator
+
+We assign a default value by adding an equal sign.
+
+
 ### Callback functiones & functions in functions
 
 Different way of defining funtion:
 
 
-
-### Default arguments & rest operator
 ### Bind() & More
 
 
