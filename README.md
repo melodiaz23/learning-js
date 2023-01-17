@@ -558,13 +558,14 @@ This show up key value pairs and all are properties of the function. And the end
     startGameBtn.addEventListener('click', start);
 
 > * In that case, we use the function as an expression insted of as a declaraction/statement.
+> * Function declarations automatically create variables that hold the function objects.
 > * Expresions are essentially the thing that yield a value, something we could store.
 > * Function expression also still take arguments and still return values that didn't change.
 
 
 ### Anonymous functions
 
-When we omit the name of the function like this: 
+It is when we omit the name of the function like this: 
 
     const start = function() { 
     console.log('Game is starting...');
@@ -575,7 +576,7 @@ When we omit the name of the function like this:
 * We assign a name to an anonymous function because the name is using for debugging. It's optional.
 
 > * A different way of defining function is with the keyword arrow [=>].
-> * Always have to be store in some variable or use it in a place where it would use an anonymous function.
+> * **Always** have to be store in some variable or use it in a place where it would use an anonymous function.
 
 **General Sintax Arrow Fuctions**
 
@@ -583,24 +584,26 @@ When we omit the name of the function like this:
     // Another way to write it if: 
     () => {...} 
     // No arguments/parameters
-    //Empty pare of parentheses is required.
+    // Empty pare of parentheses is required.
     arg => {...}
     // With ONE argument, parentheses can be omitted.
     (a, b) => a + b
-    //Exactly ONE expresion in function body
-    //Curly braces can be omitted
+    // Exactly ONE expresion in function body
+    // Curly braces can be omitted
     // If we omit the curly braces, we also must remove any return keyword.
     // The result of this calculation will then always be returned.
+    pName => ({name: pName})
+    // Extra parentheses are required around the object. 
 
-
-
+Using arrow functions, curly braces can have two meanings:
+* Mark the function body (degault form)
+* Create an object wich you want to return (in shorter function body form)
 
 ### Callback functiones & functions in functions
 
 Different way of defining funtion:
 
 
-  
 
 ### Default arguments & rest operator
 ### Bind() & More

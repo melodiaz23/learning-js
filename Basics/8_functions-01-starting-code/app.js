@@ -38,31 +38,31 @@ const getComputerChoice = () => {
     }
 };
 
-// const getWinner = (cChoice, pChoice) => // Arrow function
-//     cChoice === pChoice //Ternary expression
-//     ? RESULT_DRAW // If that's truth, return 'DRAW'
-//     :    (cChoice === ROCK && pChoice === SCISSORS) || //Else case. 
-//         (cChoice === SCISSORS && pChoice === PAPER) ||
-//         (cChoice === PAPER && pChoice === ROCK) 
-//     ? RESULT_COMPUTER_WINS // In the case that this condition is me, the result is 'COMPUTER WINS'
-//     : RESULT_PLAYER_WINS; // Else case. If the last condition is false, then return 'RESULT PLAYES WINS'
-//     // If we have and arrow function and we just have ONE expression in it, we can omit
-//     // the curly braces, and omit the return keyword.
+const getWinner = (cChoice, pChoice) => // Arrow function
+    cChoice === pChoice //Ternary expression
+    ? RESULT_DRAW // If that's truth, return 'DRAW'
+    :    (cChoice === ROCK && pChoice === SCISSORS) || //Else case. 
+        (cChoice === SCISSORS && pChoice === PAPER) ||
+        (cChoice === PAPER && pChoice === ROCK) 
+    ? RESULT_COMPUTER_WINS // In the case that this condition is me, the result is 'COMPUTER WINS'
+    : RESULT_PLAYER_WINS; // Else case. If the last condition is false, then return 'RESULT PLAYES WINS'
+    // If we have and arrow function and we just have ONE expression in it, we can omit
+    // the curly braces, and omit the return keyword.
     
-    const getWinner = (cChoice, pChoice) =>{
-    if (cChoice === pChoice){
-        console.log(RESULT_DRAW);
-        return RESULT_DRAW;
-    } else if (cChoice === ROCK && pChoice === SCISSORS || 
-        cChoice === SCISSORS && pChoice === PAPER ||
-        cChoice === PAPER && pChoice === ROCK ){
-        console.log(RESULT_COMPUTER_WINS);
-        return RESULT_COMPUTER_WINS;
-    }
-    else {
-        console.log(RESULT_PLAYER_WINS);
-        return RESULT_PLAYER_WINS;
-    }}
+    // const getWinner = (cChoice, pChoice) =>{
+    // if (cChoice === pChoice){
+    //     console.log(RESULT_DRAW);
+    //     return RESULT_DRAW;
+    // } else if (cChoice === ROCK && pChoice === SCISSORS || 
+    //     cChoice === SCISSORS && pChoice === PAPER ||
+    //     cChoice === PAPER && pChoice === ROCK ){
+    //     console.log(RESULT_COMPUTER_WINS);
+    //     return RESULT_COMPUTER_WINS;
+    // }
+    // else {
+    //     console.log(RESULT_PLAYER_WINS);
+    //     return RESULT_PLAYER_WINS;
+    // }}
 
 
 startGameBtn.addEventListener('click', () => {
