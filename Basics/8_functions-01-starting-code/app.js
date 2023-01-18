@@ -21,7 +21,7 @@ const getPlayerChoice = () => {
     selection !== PAPER && 
     selection !== SCISSORS){
     alert(`Invalid choice! we chose ${DEFAULT_USER_CHOICE} for you.`);
-    return DEFAULT_USER_CHOICE 
+    return; // This will return undefined
     }
     return selection;
     };
@@ -38,7 +38,7 @@ const getComputerChoice = () => {
     }
 };
 
-const getWinner = (cChoice, pChoice) => // Arrow function
+const getWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) => // Arrow function
     cChoice === pChoice //Ternary expression
     ? RESULT_DRAW // If that's truth, return 'DRAW'
     :    (cChoice === ROCK && pChoice === SCISSORS) || //Else case. 
@@ -71,12 +71,17 @@ startGameBtn.addEventListener('click', () => {
     }
     gameIsRunning = true
     console.log('Game is starting...');
-    const playerSelection = getPlayerChoice();
+    const playerSelection = getPlayerChoice(); //Might be undifine
     const computerChoice = getComputerChoice();
+    let winner;
+    if (playerSelection){
+        winner = getWinner(computerChoice, playerSelection);
+    } else {
+        winner = getWinner(computerChoice)
+    }
     console.log(`Player Selection: ${playerSelection}`);
     console.log(`Computer Choice: ${computerChoice}`);
-    const winner = getWinner(computerChoice, playerSelection);
-    let message = `You picked ${playerSelection}, computer picked ${computerChoice} therefore you `;
+    let message = `You picked ${playerSelection || DEFAULT_USER_CHOICE}, computer picked ${computerChoice} therefore you `;
     if (winner === RESULT_DRAW){
         message = message + 'have a DRAW.';
     } else if (winner === RESULT_PLAYER_WINS){
