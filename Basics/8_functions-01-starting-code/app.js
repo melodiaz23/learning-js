@@ -119,3 +119,27 @@ startGameBtn.addEventListener('click', () => {
 // Funtion are objects:
 // console.log(typeof startGame); //Typeof to find out what the type of is some array, number and so on.
 // console.dir(startGame) // Dir give us a different insight into objects.
+
+
+// Wherever we donn't know how many parameters/arguments will have the function.  
+const sumUp = (...numbers) =>  { // Rest operator. 
+    let sum = 0;
+    for (const num of numbers){ // For of loop
+        sum -= num // add each num to the sum.
+    }
+    return sum
+}
+
+const subtractUp = function (){
+    let sub = 0;
+    for (const num of arguments){ // For of loop
+        // Arguments is a keyword, it's built into javascript.
+        // We can use it inside of functions that use the function keyword (function())
+        sub -= num // add each num to the sum.
+    }
+    return sub
+}
+
+console.log (sumUp (1, 5, 10, -3, 6, 10));
+console.log (sumUp (1, 5, 10, -3, 6, 10, 25, 88));
+console.log(subtractUp(1, 10, 15, 20));

@@ -601,7 +601,26 @@ Using arrow functions, curly braces can have two meanings:
 
 ### Default arguments & rest operator
 
-We assign a default value by adding an equal sign.
+We assign a **default value** by adding an equal sign.
+
+    const getWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) => ...
+
+If in a function, we don't define an argument, JS, uses undifined as a value for the missing argument.
+
+The **rest operator** take all arguments the functions get and merged into an array. e.g:
+
+    const sumUp = (...numbers) => {
+        ...
+    }
+
+> Rest operator has to be the last argument on the list. This always consumes all arguments and merge them together, if we put it at the end, we couldn't never reach that argument.
+
+We also have arguments:
+* Arguments is a keyword, it's built into javascript.
+* We can use it inside of functions that use the function keyword (function())
+* Give us and array-like object (not a tru array)
+* This is an alternative to using the rest operator.
+* Is recomended the rest parameter. 
 
 
 ### Callback functiones & functions in functions
