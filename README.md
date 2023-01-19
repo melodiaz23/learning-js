@@ -625,7 +625,9 @@ We also have arguments:
 
 ### Callback functiones & functions in functions
 
-Different way of defining funtion:
+**Callback functions** is when the function it's called for you by something else.
+
+
 
 
 ### Bind() & More

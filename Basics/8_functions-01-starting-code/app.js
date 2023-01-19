@@ -65,7 +65,7 @@ const getWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) => // Arrow function
     // }}
 
 
-startGameBtn.addEventListener('click', () => {
+startGameBtn.addEventListener('click', () => { //This function is an argument.
     if (gameIsRunning){ //It makes a boolean. If gameIsRunning is true...
         return
     }
@@ -120,26 +120,34 @@ startGameBtn.addEventListener('click', () => {
 // console.log(typeof startGame); //Typeof to find out what the type of is some array, number and so on.
 // console.dir(startGame) // Dir give us a different insight into objects.
 
-
+// Not related to game
 // Wherever we donn't know how many parameters/arguments will have the function.  
-const sumUp = (...numbers) =>  { // Rest operator. 
+const sumUp = (resultHandler, ...numbers) =>  { // Rest operator. 
+    const validateNumber = (number) => {
+        return isNaN(number) ? 0 : number // If number isNaN, replace with 0. 
+        // Otherwise keep it.
+    };
     let sum = 0;
     for (const num of numbers){ // For of loop
-        sum -= num // add each num to the sum.
+        sum += validateNumber(num) // add each num to the sum.
     }
-    return sum
-}
+    resultHandler(sum);
+};
 
 const subtractUp = function (){
     let sub = 0;
     for (const num of arguments){ // For of loop
         // Arguments is a keyword, it's built into javascript.
         // We can use it inside of functions that use the function keyword (function())
-        sub -= num // add each num to the sum.
+        sub -= num // substract each num to the sub.
     }
     return sub
-}
+};
 
-console.log (sumUp (1, 5, 10, -3, 6, 10));
-console.log (sumUp (1, 5, 10, -3, 6, 10, 25, 88));
+const showResult = (result) => {
+    alert('The result after adding all numbers is ' + result);
+};
+
+sumUp (showResult, 1, 5, 'nsshjsh', -3, 6, 10);
+sumUp (showResult, 1, 5, 10, -3, 6, 10, 25, 88);
 console.log(subtractUp(1, 10, 15, 20));
