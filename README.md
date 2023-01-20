@@ -51,7 +51,7 @@ Another common use for for loop is:
 Another way to do it is with a for-of loop...
 
 ### For-of loop
-Execute for every element for every element in an array.
+Execute for every element for every element in an **array**.
 
 	for (const el of array)
 	{
@@ -627,10 +627,9 @@ We also have arguments:
 
 **Callback functions** is when the function it's called for you by something else.
 
-
-
-
 ### Bind() & More
+
+bind() -> create a new reference at a function which it returns to us, which will be preconfigured.
 
 
 

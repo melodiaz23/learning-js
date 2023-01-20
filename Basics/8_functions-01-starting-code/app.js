@@ -122,32 +122,49 @@ startGameBtn.addEventListener('click', () => { //This function is an argument.
 
 // Not related to game
 // Wherever we donn't know how many parameters/arguments will have the function.  
-const sumUp = (resultHandler, ...numbers) =>  { // Rest operator. 
+const combine = (resultHandler, operation, ...numbers) =>  { // Rest operator. 
     const validateNumber = (number) => {
         return isNaN(number) ? 0 : number // If number isNaN, replace with 0. 
         // Otherwise keep it.
     };
     let sum = 0;
     for (const num of numbers){ // For of loop
-        sum += validateNumber(num) // add each num to the sum.
+        if (operation === 'ADD'){
+            sum += validateNumber(num); // add each num to the sum.
+        } else {
+            sum -= validateNumber(num);
+        }
     }
-    resultHandler(sum);
+    resultHandler(sum, 'The result after adding all numbers is'); // ????????
+    // I DON'T GET IT HOW resultHandler
+    // is a funtion, i just see it like a parameter.
+    // How sum is result????
 };
 
-const subtractUp = function (){
-    let sub = 0;
-    for (const num of arguments){ // For of loop
-        // Arguments is a keyword, it's built into javascript.
-        // We can use it inside of functions that use the function keyword (function())
-        sub -= num // substract each num to the sub.
-    }
-    return sub
-};
+// const subtractUp = function (resultHandler, ...numbers){
+//     let sub = 0;
+//     for (const num of numbers){ // For of loop
+//         sub -= num // substract each num to the sub.
+//     }
+//     resultHandler(sub, 'The result after subtracting all numbers is');
+// };
 
-const showResult = (result) => {
-    alert('The result after adding all numbers is ' + result);
-};
+// Same with arguments thing.
+// const subtractUp = function (resultHandler){
+//     let sub = 0;
+//     for (const num of arguments){ // For of loop
+//         // Arguments is a keyword, it's built into javascript.
+//         // We can use it inside of functions that use the function keyword (function())
+//         sub -= num // substract each num to the sub.
+//     }
+//     resultHandler(sub);
+// };
 
-sumUp (showResult, 1, 5, 'nsshjsh', -3, 6, 10);
-sumUp (showResult, 1, 5, 10, -3, 6, 10, 25, 88);
-console.log(subtractUp(1, 10, 15, 20));
+const showResult = (messageText, result) => {
+    alert(messageText + ' ' + result);
+}; // ??? How showResult is relatable to resultHandler?
+
+combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 5, 'nsshjsh', -3, 6, 10); 
+combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 5, 10, -3, 6, 10, 25, 88);
+combine(showResult.bind(this, 'The result after subtracting all numbers is'), 'SUBTRACT', 1, 10, 15, 20);
+// HOW I CAN PUT THIS IN A MORE READEBLE WAY.
