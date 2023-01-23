@@ -1,6 +1,6 @@
 console.log('Task # 1');
 
-let sayHello = myName => {
+let sayHello = (myName) => {
   console.log('Hi ' + myName);
 }
 
@@ -9,7 +9,7 @@ sayHello('Mel');
 console.log('----------')
 console.log('Task # 2')
 
-let sayHelloTwo = (greet, myName) => {
+let sayHello1 = (greet, myName) => {
   if (greet === 1){
     console.log('Hi, ' + myName);
   } else {
@@ -17,48 +17,84 @@ let sayHelloTwo = (greet, myName) => {
   }
 }
 
-sayHelloTwo(1,'Mel'); 
+sayHello1(1,'Mel'); 
 
-let sayHelloThree = () => {
-  console.log('Hi, Mel <3')
+let sayHello2 = () => {
+  console.log('Hi, Mel <3');
 }
 
-sayHelloThree(); 
+sayHello2(); 
 
-let sayHelloFour = name => 
+let sayHello3 = name => 
   console.log('Hi, ' + name);
 
-sayHelloFour('Mell'); 
+sayHello3('Mell'); 
 
 console.log('----------')
 console.log('Task # 3')
 
 
-let sayHelloDefault = (myName, greet = 'Hello') => {
+let sayHelloDefault = (myName = 'Mel', greet = 1) => {
   if (greet === 1){
     console.log('Hi, ' + myName);
   } else {
     console.log ('Hello, '+ myName);
   }
-}
-sayHelloDefault('Mel', 1); 
-sayHelloDefault('Mel'); 
+};
+
+sayHelloDefault('Meli', 1); 
+sayHelloDefault('Isa');
+sayHelloDefault(); 
 
 console.log('----------')
 console.log('Task # 4');
 
-function checkInput(...cb){
-    let dataInput = () => 
-    { for (const num of cb){
-    console.log(num);
-    }}
-    if (cb != ''){dataInput()} else {console.log('NO DATA');
+// function checkInput(...cb){
+//     let dataInput = () => 
+//     { for (const num of cb){
+//     console.log(num);
+//     }}
+//     if (cb != ''){dataInput()} else {console.log('NO DATA');
+//     }
+// }
+
+// checkInput();
+
+// checkInput('Name','List', 6);
+
+function checkInput(cb, ...args) {
+  let hasEmptyString = false;
+  for (const text of args){
+    console.log({ text });
+    if (!text) {
+      hasEmptyString = true;
+      break;
     }
+  }
+
+  if (!hasEmptyString) {
+    cb();
+  }
 }
 
-checkInput();
+console.log('CB First try');
+const myCallback = () => {
+  console.log('Callback executed!');
+}
+checkInput(
+  myCallback,
+  'Orange',
+  'Pinneaple',
+  'Banana',
+  '',
+);
 
-checkInput('Name','List', 6);
+console.log('CB Second try');
+checkInput(() => console.log('Happy salad :D'), 'Orange', 'Pinneaple', 'Banana');
+
+console.log('CB third try');
+checkInput(() => console.log('Sad Salad ;D'), 'Orange', '', 'Pinneaple', 'Banana');
+
 
 // MAX SOLUTION
 
@@ -91,12 +127,15 @@ checkInput('Name','List', 6);
 //   }
 // }
 
-// checkInput(
-//   () => {
-//     console.log('All not empty!');
-//   },
-//   'Hello',
-//   '12',
-//   'adsfa',
-//   'Not empty'
-// );
+// const cbFn = () => {
+//   console.log('All not empty!');
+// };
+
+
+checkInput(cbFn
+  ,
+  'Hello',
+  '12',
+  'adsfa',
+  'Not empty'
+);

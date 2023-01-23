@@ -100,18 +100,18 @@ function calculate (operation){
         currentResult /= enteredNumber;
         operator = '/';
     }
-    createAndWriteOutput('/', initialResult, enteredNumber);
-        writeToLog('DIVIDE', initialResult, enteredNumber, currentResult)
+    createAndWriteOutput(operator, initialResult, enteredNumber);
+    writeToLog(operation, initialResult, enteredNumber, currentResult)
 
 
 }
 
 addBtn.addEventListener('click', calculate.bind(this, 'ADD'));
 
-subtractBtn.addEventListener('click', calculate.bind(this, 'ADD'))
+subtractBtn.addEventListener('click', calculate.bind(this, 'SUBTRACT'))
 
-multiplyBtn.addEventListener('click', calculate.bind(this, 'ADD'))
+multiplyBtn.addEventListener('click', calculate.bind(this, 'MULTIPLY'))
 
-divideBtn.addEventListener('click', calculate.bind(this, 'ADD'))
+divideBtn.addEventListener('click', calculate.bind(this, 'DIVIDE'))
 
 

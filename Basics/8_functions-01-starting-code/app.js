@@ -135,10 +135,7 @@ const combine = (resultHandler, operation, ...numbers) =>  { // Rest operator.
             sum -= validateNumber(num);
         }
     }
-    resultHandler(sum, 'The result after adding all numbers is'); // ????????
-    // I DON'T GET IT HOW resultHandler
-    // is a funtion, i just see it like a parameter.
-    // How sum is result????
+    resultHandler(sum, 'The result after adding all numbers is');
 };
 
 // const subtractUp = function (resultHandler, ...numbers){
@@ -162,7 +159,7 @@ const combine = (resultHandler, operation, ...numbers) =>  { // Rest operator.
 
 const showResult = (messageText, result) => {
     alert(messageText + ' ' + result);
-}; // ??? How showResult is relatable to resultHandler?
+}; 
 
 combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 5, 'nsshjsh', -3, 6, 10); 
 combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 5, 10, -3, 6, 10, 25, 88);
