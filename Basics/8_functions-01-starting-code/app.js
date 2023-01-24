@@ -164,4 +164,4 @@ const showResult = (messageText, result) => {
 combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 5, 'nsshjsh', -3, 6, 10); 
 combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 5, 10, -3, 6, 10, 25, 88);
 combine(showResult.bind(this, 'The result after subtracting all numbers is'), 'SUBTRACT', 1, 10, 15, 20);
-// HOW I CAN PUT THIS IN A MORE READEBLE WAY.
+

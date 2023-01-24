@@ -632,5 +632,14 @@ We also have arguments:
 bind() -> create a new reference at a function which it returns to us, which will be preconfigured.
 
 
+### call () & apply ()
+
+___
+
+**Useful resources & links**
+
+[Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) -> More on Functions (MDN)
+
+[Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) -> bind ()
 
 
