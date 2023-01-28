@@ -645,9 +645,13 @@ ___
 
 ## HTML, DOM & JS
 
-### The Document Object Model (DOM)
+### The Document Object Model (DOM) 
 
 > * Is the loaded and rendered HTML code. In other words the object representations of the code which the browser creates behind the scnes into which we can tap with JS.
+> * Is a programming interface (API)
+> * DOM represents the content of xml or HTML document as tree structure.
+> * With DOM we can easily read, access, update the contents of the document.
+> * DOM - Document (file), Object (tag elements), Model (layout structure)
 > * DOM is not strictly tied to browsers, there are other tools thay can parse HTML.
 
 
@@ -697,7 +701,39 @@ At the end the browser creates a tree of elements or a tree of nodes.
 **Text nodes** ->  All text we have.
 -> Is stored as objects but as a different kind of object, with differente properties and different methods.
 
+i.e: 
+    textContent // Text content element, wich in the end holds the text.
+
+> **Nodes**
+-> Are the objects that mmake up the DOM. Everything in the DOM is a node.
+-> HTML tags are 'element nodes' (or 'elements')
+-> Text creates 'text nodes'
+-> Attribute create 'attribure nodes'
+
+> **Elements**
+-> Elements are one type of nodes 
+-> We have especial properties an methods to interect with the elements.
+-> Available methods and properties depend on the kind of element.
+-> Can be selected in various different ways (via JS)
+-> Can be created and removed via JS.
+
 ### Querying DOM nodes & traversing the DOM
+
+#### Queryng Elements 
+
+**querySelector(), getElementByld()**
+-> Will select one element at a time.
+-> Query selector takes a CSS selector as we could use it in a CSS file.
+-> Get element by ID takes an ID, assigned to an HTML element and selects and element by that.
+-> Direct referente to DOM element is returned.
+
+**querySelectorAll(), geteElementsByTagName()**
+-> Will select multiple elements. 
+-> Give access (return) to collections of elements (array-like objects) - Tipically a NodeList
+-> Different ways of querying elements.
+-> Get elements by tag name give all the elements that have a certain HTML tag.
+-> Query selector all, give us access to a non-live node list (a snapshot of the currently rendered DOM)
+
 
 ### Evaluating & manipulating DOM nodes
 
