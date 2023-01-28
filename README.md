@@ -5,6 +5,7 @@ _'Tal vez no sepa lo que haga, pero luzco genial hacíendolo'_
 * Dynamic, weakly typed.
 * Compiled at run time.
 * Single threaded -> Can only do one thing at a time.
+* Is a hosted language -> The browser provides the environment for JS to run.
 
 ## Window.prompt
 
@@ -642,4 +643,62 @@ ___
 
 [Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) -> bind ()
 
+## HTML, DOM & JS
 
+### The Document Object Model (DOM)
+
+> * Is the loaded and rendered HTML code. In other words the object representations of the code which the browser creates behind the scnes into which we can tap with JS.
+> * DOM is not strictly tied to browsers, there are other tools thay can parse HTML.
+
+
+**JS**
+
+We got certain methods/funcionalities, that allows us to reach out the loaded HTML code.
+
+**BROWSER** 
+
+    <body>
+    <h1>Welcome!</h1>
+    </body>
+
+* When that html document is downloaded, the browser goes over it and parsed it and rendered it.
+* Provides the JS engine which in the end parses and understands all the JS code. 
+* Provides APIs, into which JS can tap.
+
+____
+
+**Document Object**
+-> Important piece in working with the loaded HTML code.
+-> root DOM node
+-> Provides acces to elemente querying, DOM content etc. 
+-> It is part of the window object.
+
+If we type on console: 
+    document //Access to the document object
+
+    console.dir(document) // To get a look into the real js object. 
+
+**Window object**
+-> Global object
+-> The active browser window/tab. The global storage for the script. 
+-> Acts as a global storage for script, also provides access to window-specific properties and methods. 
+
+If we type on console:
+    window // To get access to the window object.
+    // Gives us access to all the core APIs that the browser wants to exposes to us.
+    // The windows always looks in the window object if we're calling or accessing something.
+
+### Nodes & elements
+
+At the end the browser creates a tree of elements or a tree of nodes.
+
+**Elements nodes** -> All the elements we have.
+-> An element node represent and HTML element.
+**Text nodes** ->  All text we have.
+-> Is stored as objects but as a different kind of object, with differente properties and different methods.
+
+### Querying DOM nodes & traversing the DOM
+
+### Evaluating & manipulating DOM nodes
+
+### Creating & removing DOM nodes
