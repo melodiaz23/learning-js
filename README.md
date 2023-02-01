@@ -734,7 +734,53 @@ i.e:
 -> Get elements by tag name give all the elements that have a certain HTML tag.
 -> Query selector all, give us access to a non-live node list (a snapshot of the currently rendered DOM)
 
+#### Selecting elements in the DOM
+
+There are some selection methods. 
+
+**ID**
+
+    document.getElementById('The id')
+    // We use it only if we want to get and element by ITS ID. Because it is a unique element.
+
+And to get and idea for what is in the object:
+    console.dir(document.getElementById("The id"))
+    // The output here is the object the browser creates and exposes to us in JS. 
+
+> With document. and some selection method we can searh in the entire document.
+
+**Class**
+
+    document.getElementsByClassName('the class')
+    // This will return a so called HTMLCollection object which in the end is like an array.
+
+[**Query selector**](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+
+    document.querySelector(<CSS selector>);
+
+> Takes any CSS selector (e.g. '#some-id', '.some-class' or 'div p.some-class') and returns the first (!) matching element in the DOM. Returns null if no matching element could be found.
+
+    document.querySelector('.the-class')
+    // With this we need a selector:
+    // dot(.) for class
+    // hashtag(#) for id
+    // Query selector is used if we want a collection or one element but with a more complex query.
+    // It will return the FIRST matching item.
+
+With query selector is also possible to use a CSS selector.
+
+    document.querySelectorAll('.the-class')
+    // Is use if we want to have all matching items.
+    // Give us a node list such an array.
+
+or, more complex way like:
+
+    document.querySelector('ul li:firts-of-type');
+
+
+
 
 ### Evaluating & manipulating DOM nodes
+
 
 ### Creating & removing DOM nodes
