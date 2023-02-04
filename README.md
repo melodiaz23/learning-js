@@ -740,6 +740,9 @@ There are some selection methods.
 
 **ID**
 
+    document.getElementById(<ID>);
+> Takes an ID (without #, just the id name) and returns the element that has this id. Since the same ID shouldn't occur more than once on your page, it'll always return exactly that one element. Returns null if no element with the specified ID could be found.
+
     document.getElementById('The id')
     // We use it only if we want to get and element by ITS ID. Because it is a unique element.
 
@@ -751,8 +754,15 @@ And to get and idea for what is in the object:
 
 **Class**
 
+    document.getElementsByClassName(<CSS CLASS>);
+> Takes a CSS class g (e.g. 'some-class') and returns a live HTMLCollection of matched elements in your DOM. Returns an empty HTMLCollection if not matching elements were found.
+
     document.getElementsByClassName('the class')
     // This will return a so called HTMLCollection object which in the end is like an array.
+
+    document.getElementsByTagName(<HTML TAG>);
+
+> Takes an HTML tag (e.g. 'p') and returns a live HTMLCollection of matched elements in your DOM. Returns an empty HTMLCollection if not matching elements were found.
 
 [**Query selector**](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 
@@ -769,6 +779,9 @@ And to get and idea for what is in the object:
 
 With query selector is also possible to use a CSS selector.
 
+    document.querySelectorAll(<CSS selector>);
+> Takes any CSS selector (e.g. '#some-id', '.some-class' or 'div p.some-class') and returns all matching elements in the DOM as a static (non-live) NodeList. Returns and empty NodeList if no matching element could be found.
+
     document.querySelectorAll('.the-class')
     // Is use if we want to have all matching items.
     // Give us a node list such an array.
@@ -777,10 +790,46 @@ or, more complex way like:
 
     document.querySelector('ul li:firts-of-type');
 
+**ALSO** we have special properties on the document object to select parts of the document:
 
+* document.body => Selects the <body> element node.
+* document.head => Selects the <head> element node.
+* document.documentElement => Selects the <html> element node.
 
 
 ### Evaluating & manipulating DOM nodes
+
+p.textContent -> To read content
+p.id -> Read ID
+p.className -> Class name property
+
+**To change style of the content**
+p.style.color
+p.style.backgroundColor
+
+> **Attributes Vs Properties**
+> Usually, attributes are mapped to properties.
+> * Attributes: What we write in the HTML code.
+> * Properties: Object has properties. Is a value store in the object thats create base on the HTML code.
+> For DOM objects we also have properties.
+
+Properties (automatically added on created DOM objects)
+e.g:
+    conts input
+    input.id -> 1:1 mapping (live-sinc)
+    input.className -> Different names - Not always de property name is equal to the attribute name.
+    input.value -> 1:1 mapping (1 way live sync)
+    
+If we do want to change an attribute, we have setAttribute method.
+
+    input.setAttribute('value', 'text here') 
+    // (name of the attrribute, value we want to assign)
+    input.getAttribute('value')
+    // To reset the content
+
+#### Selecting multiples elements
+
+
 
 
 ### Creating & removing DOM nodes
