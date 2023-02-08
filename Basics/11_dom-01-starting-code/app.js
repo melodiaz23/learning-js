@@ -34,3 +34,18 @@ for (const listItemEl of listItemElements){
 
 // console.log(myElements.length);
 // console.log(elemsQ.length);
+
+// const section = document.getElementsByClassName('red-bg'); // Or .querySelector('section')
+const section = document.querySelector('section');
+const button = document.querySelector('button');
+// section.style.backgroundColor = 'blue';
+section.className = 'red-bg'; // Set this class attribute to that string.
+
+button.addEventListener('click', () => {
+  // if (section.className === 'red-bg visible'){
+  //   section.className = 'red-bg invisible';
+  // } else {
+  // section.className = 'red-bg visible';
+  // } // This is an option. Another is:
+  section.classList.toggle('invisible'); // classList is another property we have in every element node.
+} )

@@ -827,9 +827,68 @@ If we do want to change an attribute, we have setAttribute method.
     input.getAttribute('value')
     // To reset the content
 
-#### Selecting multiples elements
 
+#### Traversing the DOM
 
+We have: 
+* Child
+* Descendent 
+* Parent
+* Ancester
 
+If we want to get access to some of this, we can do it throught: 
+
+**up**
+* parentNode -> This propertie select any parent node.
+* parentElement -> Select a parent node that is an element.
+* closest('ancester we want to access') - Usefull to get access to any ancester node
+
+**down**
+* childNodes -> Select every childNodes including text nodes.
+* children -> Select child ELEMENTS.
+* querySelector() -> Any selector node. 
+* firstChild
+* firstElementChild
+* lastChild
+* lastElementChild
+
+**same level**
+* previousSibling
+* previousElementSibling
+* nextSibling
+* nextElementSibling
+
+#### Styling DOM elements
+
+* Via style property 
+    * Control styles as inline styles on the element.
+    * Are based on CSS properties but have adjusted names.
+
+* Via className
+    * Directly set the CSS clases assigned to the element.
+    * Set/Control all classes at once.
+    * We can also control the id or other properties.
+
+* Via classList
+    * Is an object that has a build in properties.
+    * We can add, remove or toggle CSS clases.
+
+Throught classList we get access to some methods. e.g:
+> contains --> check if a class is set.
+> add --> add a new class.
+> remove --> remove a class.
+> replace --> replace a class.
+> toggle --> toggle a class.
 
 ### Creating & removing DOM nodes
+
+#### Creating & inserting elements
+
+* HTML string 
+    -> innerHTML 
+    -> insertAdjacentHTML() 
+
+* createElement() -> to create single DOM element node
+    -> appendChild() / append
+    -> prepend(), before(), after(), insertBefore()
+    -> replaceChild(), replaceWith()
