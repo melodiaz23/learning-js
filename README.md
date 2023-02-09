@@ -799,7 +799,7 @@ or, more complex way like:
 
 ### Evaluating & manipulating DOM nodes
 
-p.textContent -> To read content
+p.textContent -> To read content (get access to all text or to set new content)
 p.id -> Read ID
 p.className -> Class name property
 
@@ -885,10 +885,26 @@ Throught classList we get access to some methods. e.g:
 #### Creating & inserting elements
 
 * HTML string 
-    -> innerHTML 
-    -> insertAdjacentHTML() 
+    **-> innerHTML:** if we want to set new elements. It will replace all the HTML content
+    
+    **-> insertAdjacentHTML():** Allow us to target a position and them define wich one HTML we we want to enter.
 
-* createElement() -> to create single DOM element node
-    -> appendChild() / append
+    * _sintax_
+    insertAdjacentElement(position, element)
+
+    * _position_
+
+    'beforebegin': Before the targetElement itself.
+    'afterbegin': Just inside the targetElement, before its first child.
+    'beforeend': Just inside the targetElement, after its last child.
+    'afterend': After the targetElement itself.
+
+
+* createElement() -> to create single DOM element node (create a new DOM object)
+It is always create on the document.
+* _sintax_ 
+createElement(tagName) -> tagName is the tag of the element we want to create.
+createElement(tagName, options) 
+    -> appendChild() / append -> it takes any node 
     -> prepend(), before(), after(), insertBefore()
     -> replaceChild(), replaceWith()
