@@ -903,7 +903,7 @@ Throught classList we get access to some methods. e.g:
 * createElement() -> to create single DOM element node (create a new DOM object)
 It is always create on the document.
 * _sintax_ 
-createElement(tagName) -> tagName is the tag of the element we want to create.
+document.createElement(tagName) -> tagName is the tag of the element we want to create.
 createElement(tagName, options) 
     -> appendChild() / append -> it takes any node 
     -> prepend(), before(), after(), insertBefore()
