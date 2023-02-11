@@ -762,13 +762,13 @@ And to get and idea for what is in the object:
 
     document.getElementsByTagName(<HTML TAG>);
 
-> Takes an HTML tag (e.g. 'p') and returns a live HTMLCollection of matched elements in your DOM. Returns an empty HTMLCollection if not matching elements were found.
+> Takes an HTML tag (e.g. 'p') and returns a live *HTMLCollection* of matched elements in your DOM. Returns an empty HTMLCollection if not matching elements were found.
 
 [**Query selector**](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 
     document.querySelector(<CSS selector>);
 
-> Takes any CSS selector (e.g. '#some-id', '.some-class' or 'div p.some-class') and returns the first (!) matching element in the DOM. Returns null if no matching element could be found.
+> Takes any CSS selector (e.g. '#some-id', '.some-class' or 'div p.some-class') and returns the first (!) matching element in the DOM. Returns null if no matching element could be found. 
 
     document.querySelector('.the-class')
     // With this we need a selector:
@@ -780,7 +780,7 @@ And to get and idea for what is in the object:
 With query selector is also possible to use a CSS selector.
 
     document.querySelectorAll(<CSS selector>);
-> Takes any CSS selector (e.g. '#some-id', '.some-class' or 'div p.some-class') and returns all matching elements in the DOM as a static (non-live) NodeList. Returns and empty NodeList if no matching element could be found.
+> Takes any CSS selector (e.g. '#some-id', '.some-class' or 'div p.some-class') and returns all matching elements in the DOM as a static (non-live) *NodeList*. Returns and empty NodeList if no matching element could be found.
 
     document.querySelectorAll('.the-class')
     // Is use if we want to have all matching items.
@@ -845,7 +845,7 @@ If we want to get access to some of this, we can do it throught:
 
 **down**
 * childNodes -> Select every childNodes including text nodes.
-* children -> Select child ELEMENTS.
+* children -> Select child ELEMENTS, via element.children[0]
 * querySelector() -> Any selector node. 
 * firstChild
 * firstElementChild
@@ -882,7 +882,7 @@ Throught classList we get access to some methods. e.g:
 
 ### Creating & removing DOM nodes
 
-#### Creating & inserting elements
+#### Creating elements
 
 * HTML string 
     **-> innerHTML:** if we want to set new elements. It will replace all the HTML content
@@ -890,7 +890,7 @@ Throught classList we get access to some methods. e.g:
     **-> insertAdjacentHTML():** Allow us to target a position and them define wich one HTML we we want to enter.
 
     * _sintax_
-    insertAdjacentElement(position, element)
+    insertAdjacentHTML(position, element)
 
     * _position_
 
@@ -905,6 +905,50 @@ It is always create on the document.
 * _sintax_ 
 document.createElement(tagName) -> tagName is the tag of the element we want to create.
 createElement(tagName, options) 
-    -> appendChild() / append -> it takes any node 
-    -> prepend(), before(), after(), insertBefore()
-    -> replaceChild(), replaceWith()
+
+#### Inserting elements
+
+    *-> appendChild() / append* -> with appendChild() we insert the DOM element we create. With append we also can add a string.*
+    *-> prepend(), before(), after(), insertBefore()*
+        - prepend(): it insert a element we create to the first element. For IE: element.insertBefore().
+        - before() - after(): before or after the element. (IE and safari has problem with bafore and after)
+        - insertBefore() - has support for IE and Safari.
+    *-> replaceChild(), replaceWith()*
+        - replaceWith(): replace an element
+
+Another way to insert an element: 
+
+        element.insertAdjacentHTML(posición, texto); -> Has better browser support
+    
+> _position_
+> 'beforebegin': Before the targetElement itself.
+> 'afterbegin': Just inside the targetElement, before its first child.
+> 'beforeend': Just inside the targetElement, after its last child.
+> 'afterend': After the targetElement itself.
+
+
+#### Cloning DOM nodes
+
+To copied elements: 
+
+    element.cloneNode(true or false); // false (default value) for clone just the element without the childs. true to clone ALL.
+
+#### removing elemnts
+
+    element.remove() -> remove the element from the DOM
+
+or, another way could be: 
+
+    element.parentElement.removeChild() // In parenthesis, the item we want to delete.
+    This is supported in ALL browsers
+
+#### Text nodes
+
+We can easily create & insert text nodes in one go:
+
+    someElement.textContent = 'Hi there!';
+    // This creates and inserts the text node with a content of 'Hi there!'.
+
+to append to existing text:
+
+    someElement.textContent = someElement.textContent + 'More text!';
