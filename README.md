@@ -933,7 +933,7 @@ To copied elements:
 
     element.cloneNode(true or false); // false (default value) for clone just the element without the childs. true to clone ALL.
 
-#### removing elemnts
+#### removing elements
 
     element.remove() -> remove the element from the DOM
 
