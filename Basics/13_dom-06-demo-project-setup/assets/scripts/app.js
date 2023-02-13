@@ -24,7 +24,20 @@ const updateUI = () => {
   }
 };
 
-const addNewMovie = (title, imageUrl, rating) => {
+const deleteMovieHandler = (movieId) => {
+  let movieIndex = 0; 
+  for (const movie of movies){
+    if (movie.id === movieId){
+      break;
+    }
+    movieIndex++;
+  }
+  movies.splice(movieIndex, 1) // Takes an index as an input  
+  const ulMovieList = document.getElementById('movie-list');
+  ulMovieList.children[movieIndex].remove();
+}
+
+const addNewMovie = (id, title, imageUrl, rating) => {
   const newMovieElement = document.createElement('li');
   newMovieElement.className = 'movie-element';
    //backticks 'option' + '}'
@@ -37,6 +50,7 @@ const addNewMovie = (title, imageUrl, rating) => {
       <p>${rating}/5 stars</p>
     </div>
   `;
+  newMovieElement.addEventListener('click', deleteMovieHandler.bind(null, id))
   const ulMovieList = document.getElementById('movie-list');
   ulMovieList.append(newMovieElement);
 }
@@ -58,6 +72,7 @@ const addMovieHandler = () => {
     return;
   }
   const newMovie = {
+    id: Math.random().toString(), // toString to converting to a string
     title: tittleValue,
     image: imageUrlValue,
     rating: ratingValue
@@ -65,7 +80,7 @@ const addMovieHandler = () => {
   movies.push(newMovie);
   console.log(movies)
   toogleModal();
-  addNewMovie(newMovie.title, newMovie.image, newMovie.rating);
+  addNewMovie(newMovie.id, newMovie.title, newMovie.image, newMovie.rating);
   updateUI();
 };
 
@@ -94,3 +109,4 @@ addMovieButton.addEventListener("click", toogleModal);
 cancelButton.addEventListener("click", toogleModal);
 backdrop.addEventListener("click", toogleModal);
 addButton.addEventListener('click', addMovieHandler);
+
