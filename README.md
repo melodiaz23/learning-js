@@ -654,6 +654,8 @@ ___
 > * DOM - Document (file), Object (tag elements), Model (layout structure)
 > * DOM is not strictly tied to browsers, there are other tools thay can parse HTML.
 
+**Resources:** [DOM Introduction on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+
 
 **JS**
 
