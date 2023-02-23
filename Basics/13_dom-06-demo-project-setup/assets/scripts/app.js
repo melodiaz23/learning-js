@@ -6,6 +6,8 @@ const backdrop = document.getElementById('backdrop');
 const userInputs = document.querySelectorAll('input');
 
 const movies = []
+const listRoot = document.getElementById('movie-list');
+const deleteMovieModal = document.getElementById('delete-modal');
 
 const addModalVisibility =  () => addModal.classList.add('visible');
 const removeModal = () => addModal.classList.remove('visible')
@@ -28,9 +30,14 @@ const clearMovieInput = () => {
   }
 }
 
+const closeMovieDeletionModal = () => {
+  deleteMovieModal.classList.remove('visible');
+  hidebBackdrop();
+}
+
 const updateUI = () => {
   const entryTextSection = document.getElementById('entry-text');
-  if (movies === 0) {
+  if (movies.length === 0) {
     entryTextSection.style.display = 'block';
   } else {
     entryTextSection.style.display = 'none';
@@ -48,9 +55,8 @@ const renderNewMovieElement = (id, imageUrl, title, rating) => {
     <p>${rating}/5 stars</p>
     </div>
   `;
-  newMovieElement.addEventListener('click', startDeletionHandler);
-  const listRoot = document.getElementById('movie-list');
   listRoot.append(newMovieElement);
+  newMovieElement.addEventListener('click', startDeletionHandler.bind(null, id));
 };
 
 const addMovieHandler = () => {
@@ -70,7 +76,7 @@ const addMovieHandler = () => {
   }
 
   const newMovie = {
-    id: Math.random().toString, // toString to converting to a string
+    id: Math.random().toString(), // toString to converting to a string
     title: titleValue,
     url: imageUrl,
     rating: ratingValue
@@ -87,10 +93,27 @@ const addMovieHandler = () => {
   updateUI();
 }
 
-const startDeletionHandler = () =>{
-  const deleteMovieModal = document.getElementById('delete-modal');
+const deleteMovieHandler = (movieId) => {
+  let movieIndex = 0
+  for (const movie of movies){
+    if (movie.id === movieId){
+      break;
+    }
+    movieIndex++;
+  }
+  movies.splice(movieIndex, 1); // Takes an index as an input and the numnber of items we want to remove and remove it. movieIndex mean the numbers of elements from index will start to remove. The number 1 is known as 'removeCount', and means the number of elements we will remove.
+  listRoot.children[movieIndex].remove();
+  closeMovieDeletionModal();
+  updateUI();
+}
+
+const startDeletionHandler = (movieId) =>{
   const cancelDeletionButton = deleteMovieModal.querySelector('.btn--passive');
-  const confirmDeletionButton = deleteMovieModal.querySelector('.btn--danger');
+
+  let confirmDeletionButton = deleteMovieModal.querySelector('.btn--danger');
+  confirmDeletionButton.replaceWith(confirmDeletionButton.cloneNode(true));
+  confirmDeletionButton = deleteMovieModal.querySelector('.btn--danger');
+
 
   const deletionModal = () => {
     deleteMovieModal.classList.add('visible');
@@ -108,7 +131,7 @@ const startDeletionHandler = () =>{
 
   cancelDeletionButton.addEventListener('click', cancelModal);
   backdrop.addEventListener('click', cancelModal);
-  confirmDeletionButton.addEventListener('click', console.log('CONFIRM'))
+  confirmDeletionButton.addEventListener('click', deleteMovieHandler.bind(null, movieId));
 }
 
 addMovieFirstButton.addEventListener('click', showMoviemodal);
