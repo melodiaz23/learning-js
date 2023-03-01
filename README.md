@@ -954,3 +954,27 @@ We can easily create & insert text nodes in one go:
 to append to existing text:
 
     someElement.textContent = someElement.textContent + 'More text!';
+
+# Arrays & iterables
+
+**Iterable:** Can be define as any object that implement the 'iterable' protocol and have an @@iterator method (i.e. Symbol.iterator). In other words, objects where you can use the for-of-loop.
+
+> Not every iterable is an array. Other iterables are: NodeList, string, map, set.
+
+**Array-like object:** Objects that have a lengh property and use indexes to access items. 
+
+> Not every array-like object is an array. Other arrays likes are: NodeList, String.
+
+## Different ways of creating arrays
+
+Depends on the kind of data we have.
+
+>**Wich data can we store on an Array?**
+>We can store: 
+>* Numbers
+>* Strings
+>* Objects
+
+## Working with arrays 
+## Important array methods 
+## Other iterables: Maps & sets
