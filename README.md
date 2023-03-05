@@ -970,10 +970,14 @@ to append to existing text:
 Depends on the kind of data we have.
 
 >**Wich data can we store on an Array?**
+>
 >We can store: 
 >* Numbers
 >* Strings
 >* Objects
+
+Arrays are index based. We can access data by index.
+Also, they are **reference values**.
 
 ## Working with arrays 
 ## Important array methods 

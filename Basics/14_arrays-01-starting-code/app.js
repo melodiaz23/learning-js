@@ -51,3 +51,13 @@
 // console.log(hobbies);
 // // If we put a negative index (-1, -2...) it looks to the end of the  array and look from the right. If we put -1 it will delete the last item.
 
+//OTHER METHODS
+const testResults = [1, 5.3, 1.5, 10.99, -5, 10]
+
+console.log(testResults.slice()); // It return a brand new array, so is a way of copie an array.
+
+//Other use of array... 
+// It help us to selecting ranges of an array.
+const storedResults = testResults.slice(0, 2) // With this we specify a start and an end number. This give us an array. In this case: 0 - Starting index and 2 - final index without including the index 2
+const negativIndex = testResults.slice(-3, -1) // It also works. the starting point will be the -3 item of the array right to left and the last item will be the -1 (not imcluded). 
+const oneIndex = testResults.slice(2) // Select elements on the array, since the number of index specify and select every element up to the end.
