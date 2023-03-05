@@ -61,3 +61,7 @@ console.log(testResults.slice()); // It return a brand new array, so is a way of
 const storedResults = testResults.slice(0, 2) // With this we specify a start and an end number. This give us an array. In this case: 0 - Starting index and 2 - final index without including the index 2
 const negativIndex = testResults.slice(-3, -1) // It also works. the starting point will be the -3 item of the array right to left and the last item will be the -1 (not imcluded). 
 const oneIndex = testResults.slice(2) // Select elements on the array, since the number of index specify and select every element up to the end.
+
+// Add elements to an array and return a new array -> concat()
+const storedResults2 = testResults.concat([3.99, 2]); // Return a new array combining an existing array
+testResults.push(5.91); // Push add a new element to the array. 
