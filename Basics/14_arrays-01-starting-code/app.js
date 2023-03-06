@@ -52,7 +52,7 @@
 // // If we put a negative index (-1, -2...) it looks to the end of the  array and look from the right. If we put -1 it will delete the last item.
 
 //OTHER METHODS
-const testResults = [1, 5.3, 1.5, 10.99, -5, 10]
+const testResults = [1, 5.3, 1.5, 10.99, 1.5, -5, 10]
 
 console.log(testResults.slice()); // It return a brand new array, so is a way of copie an array.
 
@@ -65,3 +65,20 @@ const oneIndex = testResults.slice(2) // Select elements on the array, since the
 // Add elements to an array and return a new array -> concat()
 const storedResults2 = testResults.concat([3.99, 2]); // Return a new array combining an existing array
 testResults.push(5.91); // Push add a new element to the array. 
+
+//To look for the index of one element in the array. .indexOf()
+console.log(testResults.indexOf(1.5)) // It returns the first index of the value we are passing. If we add a second argument, this will be the index will be looking for. 
+console.log(testResults.lastIndexOf(1.5)); // This start looking for the value, right to left.
+// It only works with primitive values, no with reference values. In that case, we have other method:
+
+const personData = [{name: 'Max'}, {name: 'Manuel'}];
+
+const manuel = personData.find((person, idx, persons) => { // It return the same object are in the array. Find does not create a copy. It works with the reference value. This means that if we manipulate 'manuel' in this case, this gonna change on personData too.
+  return person.name === 'Manuel'; // It gonna return the first match.
+}); 
+
+const maxIndex = personData.findIndex((person, idx, persons) => {
+  return person.name === 'Max'; // This gonna return the index.
+});
+
+
