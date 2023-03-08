@@ -103,7 +103,7 @@
 // console.log(taxAdjustedPrices); 
 
 // Theres another method: map();
-const prices = [10.99, 5.99, 3.99, 6.59]
+const prices = [10.99, 5.99, 3.99, 6.59, 90.10, 70.3]
 const tax = 0.19;
 // const taxAdjustedPrices = [];
 
@@ -111,5 +111,16 @@ const taxAdjustedPrices = prices.map((price, idx, prices) => {
   const priceObj = {index: idx, taxAdjPrice: price * (1 + tax)}
   return priceObj; // This has to return something. Return a BRAND NEW array. 
 });
-console.log(prices, taxAdjustedPrices); 
+// console.log(prices, taxAdjustedPrices); 
 
+// This method convert everything to a array. 
+const sortedPrices = prices.sort((a, b) => { // This logic will organize all the array. It will depend of the kind of data we want to sort.
+  if (a > b){
+    return 1;
+  } else if (a === b){
+    return 0;
+  } else {
+    return -1;
+  }
+}); 
+console.log(sortedPrices.reverse()); // Reverse the array.
