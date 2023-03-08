@@ -86,20 +86,30 @@
 
 // Other method...
 
+// const prices = [10.99, 5.99, 3.99, 6.59]
+// const tax = 0.19;
+// const taxAdjustedPrices = [];
+
+// // Insted this: 
+// // for (const price of prices){
+// //   taxAdjustedPrices.push(price * (1 + tax));
+// // }
+// // With this method we can't now the index, we need to do it manually. 
+// // We also can use forEach method
+// prices.forEach((price, idx, prices) => {
+//   const priceObj = {index: idx, taxAdjPrice: price * (1 + tax)}
+//   taxAdjustedPrices.push(priceObj);
+// });
+// console.log(taxAdjustedPrices); 
+
+// Theres another method: map();
 const prices = [10.99, 5.99, 3.99, 6.59]
 const tax = 0.19;
-const taxAdjustedPrices = [];
+// const taxAdjustedPrices = [];
 
-// Insted this: 
-// for (const price of prices){
-//   taxAdjustedPrices.push(price * (1 + tax));
-// }
-// With this method we can't now the index, we need to do it manually. 
-// We also can use forEach method
-prices.forEach((price, idx, prices) => {
+const taxAdjustedPrices = prices.map((price, idx, prices) => {
   const priceObj = {index: idx, taxAdjPrice: price * (1 + tax)}
-  taxAdjustedPrices.push(priceObj);
+  return priceObj; // This has to return something. Return a BRAND NEW array. 
 });
-console.log(taxAdjustedPrices); 
-
+console.log(prices, taxAdjustedPrices); 
 
