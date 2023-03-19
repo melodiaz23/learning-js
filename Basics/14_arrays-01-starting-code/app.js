@@ -103,7 +103,7 @@
 // console.log(taxAdjustedPrices); 
 
 // Theres another method: map();
-const prices = [10.99, 5.99, 3.99, 6.59, 90.10, 70.3]
+const prices = [10.99, 5.99, 3.99, 6.59];
 const tax = 0.19;
 // const taxAdjustedPrices = [];
 
@@ -124,3 +124,83 @@ const sortedPrices = prices.sort((a, b) => { // This logic will organize all the
   }
 }); 
 console.log(sortedPrices.reverse()); // Reverse the array.
+
+// If we want to reduce the amount of elements of the array based on a filter: 
+
+// const filteredArray = prices.filter((price, idx, prices) => {
+//   return price > 6; // If any item is greater than 6, it will be added to the array.
+// }); //Filter expected a value: true or false.
+
+// console.log(filteredArray);
+
+// Another shorter way with arrow function: 
+const filteredArray = prices.filter(price => price > 6); 
+console.log(filteredArray);
+
+// Reduce method(); -> Reduce an array to a simple value.
+
+
+const sum = prices.reduce((prevValue, curValue, idx, prices) => {
+  return prevValue + curValue;
+}, 0); // Reduce take a function, with some arguments like: Previous value -initial value and, after first execution will hold the value of the previous execution-, current value -first element of the array-, current index (optional), and the original array. AND the second argument we pass to reduce is the initial value wich we want to start.
+
+// => SHORTER WAY:
+// const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
+
+console.log(sum);
+
+const data = 'new york;19.99;2000';
+const transformedData = data.split(';') // As argument we specify the separator
+transformedData[1] = +transformedData[1] //To transform into a number.
+console.log(transformedData);
+
+const nameFragments = ['Max', 'Schwarz'];
+const name = nameFragments.join(' ') //By default is separeted by a comma. But if we want a space we just need to put an empty string as an argument.
+console.log(name);
+
+////////
+// The spread operator
+const copiedNameFragments = [...nameFragments]; // This pull out all the elements of the nameFragments array, and add them as individual elements. This will be a new array with the values of an old array.
+nameFragments.push('Mr');
+console.log(nameFragments, copiedNameFragments); // The log will be different.
+
+console.log(Math.min(...prices)); // Math.min takes values and return the smallest. It only works with number, so if we have an array we will need the spread operator.
+
+const persons = [{name: 'Max', age: 30}, {name : 'Manuel', age: 31}];
+// const copiedPersons = [... persons];
+const copiedPersons = persons.map(person => ({
+  name: person.name, 
+  age: person.age
+}));
+persons.push({name : 'Anna', age: 29});
+persons[0].age = 31;
+console.log(persons, copiedPersons) // If we change the age value it is also reflected on copiedPersons.
+// it is because we only copy these addresses and create a new array, not a new object. If we dont want want it, we use map.
+
+
+
+
+
+
+
+
+
+////////////////////////////
+// Proffesor steve, example: 
+
+// let dwarves = ['Grumpy', 'Sneezy', 'Happy', 'Bashful', 'Doc', 'Dopey', 'Sleepy'];
+
+// let name1 = 'Peter Dinklage';
+// let name2 = 'Kenny Baker';
+// let name3 = 'Happy';
+
+// let names = [].concat(name1, name2, name3);
+// console.log(names)
+
+// let nameVal = names.forEach((name, idx) => {
+//  console.log(`${idx} => ${dwarves.includes(name)}`);
+//  if (dwarves.includes(name)){
+//   console.log(`${name} is included`)
+//  } else {
+//   console.log(`${name} is NOT included`)}
+// });
