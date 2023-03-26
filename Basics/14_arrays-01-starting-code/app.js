@@ -177,9 +177,9 @@
 // console.log(persons, copiedPersons) // If we change the age value it is also reflected on copiedPersons.
 // // it is because we only copy these addresses and create a new array, not a new object. If we dont want want it, we use map.
 
-// Array destructuring
+// Array destructuring: A feature that alow us to split an array into variables or constants.
 const nameData = ['Max', 'Schwarz', 'Mr', 30];
-const [firstName, lastName, ... otherInformation] = nameData // Rest operator to all the remaining parts.
+const [firstName, lastName, ... otherInformation] = nameData // firstName, lastName, etc, will be a variables name.  Rest operator to all the remaining parts. 
 console.log(firstName, lastName, otherInformation);
 
 
