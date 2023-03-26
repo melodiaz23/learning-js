@@ -478,6 +478,7 @@ This are stored in memory (normally on Stack). Primitive values are copied by va
 * Reference values:
     * Objects
     * Array
+    * Functions
 
 Stored in memory (Heap). Reference values, because they are more complex to manage, if we copy a variable wich holds a reference values, we just copy the reference and not the value.
 
@@ -981,4 +982,22 @@ Also, they are **reference values**.
 
 ## Working with arrays 
 ## Important array methods 
+
 ## Other iterables: Maps & sets
+
+There are some data containers: 
+
+    **Arrays**
+    -> Store (nested) data of any kind and length.
+    -> Iterable, also many special array methods available. 
+    -> Order is guaranteed, duplicates are allowed, zero-based index to access elements.
+
+    **Sets**
+    -> Store (nested) data of ant kind of length. 
+    -> Iterable, also some special set methods available.
+    -> Order is not guaranted, duplicates are NOT allowed, no index-based access.
+
+    **Maps**
+    -> Stored key-value data of any kind and length, any key values are allowed. 
+    -> Iterable, also some special map methods available.
+    -> Order is guaranteed, duplicate keys are not allowed, key-based access.
