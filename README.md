@@ -985,21 +985,29 @@ Also, they are **reference values**.
 
 ## Other iterables: Maps & sets
 
-In JS we got three major iterable data structures.
-There are some data containers: 
+In JS we got three major iterable data structures. There are some data containers: 
 
-    **Arrays**
-    -> Store (nested) data of any kind and lenkth.
+**Arrays**
+    -> Store (nested) data of any kind and length.
     -> Iterable, also many special array methods available. 
     -> Order is guaranteed, duplicates are allowed, zero-based index to access elements.
 
-    **Sets** 
+**Sets** 
     -> Sets are a data estructure wich help us to manage unique values.
-    -> Store (nested) data of ant kind of length. 
+    -> Store (nested) data of any kind of length. 
     -> Iterable, also some special set methods available.
     -> Order is not guaranted, duplicates are NOT allowed, no index-based access.
 
-    **Maps**
+**Maps**
     -> Stored key-value data of any kind and length, any key values are allowed. 
     -> Iterable, also some special map methods available.
     -> Order is guaranteed, duplicate keys are not allowed, key-based access.
+
+> **Maps Vs. Objects**
+> - Maps can use ANY value as keys, object only use strings, numbers or symbols.
+> - For large quantities of data, maps has better performance than objects do.
+> - Maps has better performance when adding & removing data frecuently, while objects are easier and quicker to create. 
+
+
+> **QUESTIONS:**
+> MAX said that weakMap and WeakSet dont't prevent to the garbage collection rid of the address of some object. That means that eventually if we use some of them, the reference will be null?
