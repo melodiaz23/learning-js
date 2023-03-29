@@ -985,14 +985,16 @@ Also, they are **reference values**.
 
 ## Other iterables: Maps & sets
 
+In JS we got three major iterable data structures.
 There are some data containers: 
 
     **Arrays**
-    -> Store (nested) data of any kind and length.
+    -> Store (nested) data of any kind and lenkth.
     -> Iterable, also many special array methods available. 
     -> Order is guaranteed, duplicates are allowed, zero-based index to access elements.
 
-    **Sets**
+    **Sets** 
+    -> Sets are a data estructure wich help us to manage unique values.
     -> Store (nested) data of ant kind of length. 
     -> Iterable, also some special set methods available.
     -> Order is not guaranted, duplicates are NOT allowed, no index-based access.
