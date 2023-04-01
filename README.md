@@ -1008,6 +1008,42 @@ In JS we got three major iterable data structures. There are some data container
 > - For large quantities of data, maps has better performance than objects do.
 > - Maps has better performance when adding & removing data frecuently, while objects are easier and quicker to create. 
 
+[**Useful link**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
-> **QUESTIONS:**
-> MAX said that weakMap and WeakSet dont't prevent to the garbage collection rid of the address of some object. That means that eventually if we use some of them, the reference will be null?
+### OBJECTS
+
+Objects are core data Structure. 
+
+- Reflect'real-world' entities (things with can interact with, like buttons).
+- Allow us to apply real-world logic.
+
+Objects are made up of properties & methods (key value pair, that are a functions). 
+- Properties are variables in an object, we use it to store data. 
+- Methods are functions in an object.
+
+
+> Properties are key-value pairs which store some static values or some values, not
+functions. If we store a function as a value on a certain key, then this is called a method.
+
+___
+
+There are: 
+
+**Primitive Values:** Numbers, Strings, Booleans, null, undefined, Symbol.
+
+**Reference Values ( = Objects):** Everything else... 
+- DOM
+- Object literal notation => {}. 
+- Arrays (special type of objects).
+- ... other built-in objects. 
+
+**_How looks and object?_**
+
+const person = {
+  name: 'Max',  ----> Properties
+  age: 30, 
+  hobbies: ['sports', 'cooking'],
+  greet: function(){ ----> Methods
+    alert('Hi there');
+  }
+}
