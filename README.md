@@ -1040,10 +1040,12 @@ There are:
 **_How looks and object?_**
 
 const person = {
-  name: 'Max',  ----> Properties
+  name: 'Max',  ----> Properties 
   age: 30, 
   hobbies: ['sports', 'cooking'],
   greet: function(){ ----> Methods
     alert('Hi there');
   }
 }
+
+name, age, hobbies are keys (are more flexibles than variables)
