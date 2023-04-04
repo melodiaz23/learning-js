@@ -1048,4 +1048,14 @@ const person = {
   }
 }
 
-name, age, hobbies are keys (are more flexibles than variables)
+name, age, hobbies are keys (are more flexibles than variables).
+
+#### Object spread operator
+
+What this does is it takes all key-value pairs of that object you pass after the spread operator and merge these key-value pairs into a new object.
+
+    const person = {name: 'Max', hobbies: ['Sports', 'Cooking']};
+    const anotherPerson = {...person};
+
+The spread operator creates a new object, it copies the values we have in the keys of the old object and also the key names (it copied the top level key-value pairs)
+
