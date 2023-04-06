@@ -1059,3 +1059,18 @@ What this does is it takes all key-value pairs of that object you pass after the
 
 The spread operator creates a new object, it copies the values we have in the keys of the old object and also the key names (it copied the top level key-value pairs)
 
+_**Useful resources**_
+
+- [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+
+### Classes & Object Oriented Programming (OOP)
+
+#### What is OOP?
+
+Is and aprroach that allow us to structuring our code. Is about embracing the logic of work with object in all our code.
+
+
+
+#### Classes and instances
+#### Properties, fields & methods
+#### Inheritance
