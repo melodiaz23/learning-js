@@ -1069,8 +1069,24 @@ _**Useful resources**_
 
 Is and aprroach that allow us to structuring our code. Is about embracing the logic of work with object in all our code.
 
-
-
 #### Classes and instances
+
+Classes alow us to build objects in an easiar way. Classes are blueprints for objects.
+
+Objects are also calls **instances** of classes. We can create an object based on some class. 
+
 #### Properties, fields & methods
+
+##### Static Field / Property / Method
+
+    - Define with static keyword
+    - Only accessible on class itserl, without instantiation.
+    - Typically used in helper classes, global configuration, etc.
+
+##### Instance Field / Property / Method
+
+    - Define with static keyword.
+    - Only accessible on instances based on class.
+    - Use for core, re-usable logic.
+
 #### Inheritance
