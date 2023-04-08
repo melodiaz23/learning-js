@@ -1090,3 +1090,4 @@ Objects are also calls **instances** of classes. We can create an object based o
     - Use for core, re-usable logic.
 
 #### Inheritance
+
