@@ -20,8 +20,16 @@ class ElementAttribute {
 }
 
 class Component {
-  constructor(renderHookId){
+  constructor(renderHookId, shouldRender = true){
     this.hookId = renderHookId;
+    if (shouldRender){
+    this.render();
+    }
+  }
+
+
+  render(){
+
   }
 
   createRootElement(tag, cssClasses, attributes){
@@ -80,8 +88,9 @@ class ShoppingCart extends Component {
 
 class ProductItem extends Component {
   constructor (product, renderHookId) {
-    super(renderHookId)
+    super(renderHookId, false)
     this.product = product;
+    this.render();
   }
 
   addToCart(){
@@ -109,7 +118,15 @@ class ProductItem extends Component {
 }
 
 class ProducList extends Component {
-  products = [new Product(
+  products = [];
+
+  constructor(renderHookId) {
+    super(renderHookId);
+    this.fetchProducts();
+  }
+
+fetchProducts(){
+  this.products = [new Product(
     'A pillow',
     'https://cdn.thewirecutter.com/wp-content/media/2023/01/bedpillows-2048px-9999.jpg',
     'A soft pillow!',
@@ -121,41 +138,39 @@ class ProducList extends Component {
     'A carpet you might like!',
     89.99
   )];
+  this.renderProducts();
+}
 
-  constructor(renderHookId) {
-    super(renderHookId);
-  }
+renderProducts(){
+  for (const prod of this.products) {
+    const productItem = new ProductItem(prod, 'prod-list');
+}
+}
 
   render () {
-    // const prodList = document.createElement("ul");
-    // prodList.className = "product-list";
-    // prodList.id = 'prod-list'
-    // const prodList = 
-    this.createRootElement(
-      "ul",
-      "product-list",
-      [new ElementAttribute("id", "prod-list")
+    this.createRootElement("ul", "product-list", [
+      new ElementAttribute("id", "prod-list")
     ]);
-    for (const prod of this.products) {
-      const productItem = new ProductItem(prod, 'prod-list');
-      // const prodEl = 
-      productItem.render();
-      // prodList.append(prodEl);
-    }
-    // return prodList;
+      if (this.products && this.products.length > 0){
+        this.renderProducts();
+      }
   }
 }
 
 class Shop {
+  constructor(){
+    this.render();
+  }
 
+  
   render(){
     // const renderHook = document.getElementById('app');
     this.cart = new ShoppingCart('app');
     // const cartEl = 
-    this.cart.render();
-    const productList = new ProducList('app');
+    // this.cart.render();
+    new ProducList('app');
     // const prodListEl = 
-    productList.render();
+    // productList.render();
 
     // renderHook.append(cartEl);
     // renderHook.append(prodListEl);
@@ -167,7 +182,7 @@ class App {
 
   static init() {
     const shop = new Shop();
-    shop.render();
+    // shop.render();
     this.cart = shop.cart;
   }
 
