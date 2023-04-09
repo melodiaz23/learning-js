@@ -63,7 +63,12 @@ class ShoppingCart extends Component {
   }
 
   constructor(renderHookId){
-    super(renderHookId);
+    super(renderHookId, false); // super is called before a property is created based on that field??
+    this.orderProducts = () => {
+      console.log('Ordering...');
+      console.log(this.items);
+    }
+    this.render();
   }  
 
   addProduct(product){
@@ -81,6 +86,9 @@ class ShoppingCart extends Component {
     <h2>Total:\$${0}</h2>
     <button>Order Now!</button>
     `;
+    const orderButton = cartEl.querySelector('button');
+    // orderButton.addEventListener('click', () => this.orderProducts()); // Insteed bind
+    orderButton.addEventListener('click', this.orderProducts); 
     this.totalOutput = cartEl.querySelector('h2');
     // return cartEl;
   }
@@ -121,7 +129,8 @@ class ProducList extends Component {
   products = [];
 
   constructor(renderHookId) {
-    super(renderHookId);
+    super(renderHookId, false);
+    this.render();
     this.fetchProducts();
   }
 
