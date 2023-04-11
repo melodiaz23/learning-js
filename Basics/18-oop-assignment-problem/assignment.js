@@ -1,15 +1,19 @@
 class Course {
-  // set price(value){
-  //   if (value < 0) {
-  //     value = null
-  //     return;
-  //   } 
-  //     this.price = value;
-  // }
+  #_price;
 
-  // get price() {
-  //   return '$' + this.price;
-  // }
+  get price() {
+    return '$' + this.#_price;
+  }
+
+  set price(value){
+    if (value < 0) {
+      throw 'Invalid value!';
+      // value = null
+      // return;
+    } 
+      this.#_price = value;
+  }
+
 
   constructor(title, length, price){
     this.title = title; 
@@ -18,7 +22,7 @@ class Course {
   }
 
   value(){
-    const divide = this.length / this.price;
+    const divide = this.length / this.#_price;
     return divide.toFixed(2);}
 
   render(){
@@ -41,10 +45,11 @@ class PracticalCourse extends Course {
 
 class TheoreticalCourse extends Course {
 
-  constructor(title, length, price){
-    super(title, length, price);
-    this.publish();
-  }
+  // constructor(){
+  //   // super(title, length, price);
+  //   super();
+  //   this.publish();
+  // }
   publish(){
     console.log('Something to print to the console')
   }
@@ -78,10 +83,12 @@ class solution {
     const practicalPython = new PracticalCourse(7, 'Python', 24, 19.99)
     console.log(practicalJS);
     console.log(practicalPython);
+    // practicalJS.render();
     const theorethicalJS = new TheoreticalCourse('Javascript', 50, 29.99);
     const theorethicalPython = new TheoreticalCourse('Python', 24, 19.99);
     console.log(theorethicalJS);
     console.log(theorethicalPython);
+    theorethicalJS.publish();
   }
 
 }
