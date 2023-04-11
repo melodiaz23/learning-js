@@ -1,20 +1,20 @@
 class Course {
-  set price(value){
-    if (value < 0) {
-      value = null
-      return;
-    } 
-      this.price = value;
-  }
+  // set price(value){
+  //   if (value < 0) {
+  //     value = null
+  //     return;
+  //   } 
+  //     this.price = value;
+  // }
 
-  get price() {
-    return '$' + this.price;
-  }
+  // get price() {
+  //   return '$' + this.price;
+  // }
 
   constructor(title, length, price){
     this.title = title; 
     this.length = length;
-    price;
+    this.price = price;
   }
 
   value(){
