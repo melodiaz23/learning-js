@@ -1091,3 +1091,29 @@ Objects are also calls **instances** of classes. We can create an object based o
 
 #### Inheritance
 
+_**Useful resources**_
+
+- [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+
+### CLasses & OOP
+
+#### Classes and objects
+### Constructor functions (without classes)
+
+Constructor functions are: 
+- Blueprint for Objects (as Classes)
+- Properties & Methods (as Classes)
+
+    Now, the constructor function we have **inside** of a class effectively allows us to define the class body, so all the instructions that should run when an object is created based on the blueprint inside
+
+    In a constructor function, it's obvious that whenever we create a new object based on it, all the code in that function executes.
+
+### Prototypes & prototypical inheritance
+
+Prototype objects are 'fallback objects' which JS has a look at it if searches for a certain property or method.
+
+Prototype is basically a connected object wich is used as a fallback object.  Are in the end just connected objects which serve as fallback objects.
+
+    EVERY object in JavaScript by default has such a fallback object (i.e. a prototype object) 
+
+**Prototypical inheritance** refers to the ability to access object properties from another object.
