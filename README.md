@@ -1117,3 +1117,9 @@ Prototype is basically a connected object wich is used as a fallback object.  Ar
     EVERY object in JavaScript by default has such a fallback object (i.e. a prototype object) 
 
 **Prototypical inheritance** refers to the ability to access object properties from another object.
+
+_**Useful resources**_
+
+- [Constructor Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#using_a_constructor_function)
+
+- [Prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
