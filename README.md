@@ -1123,3 +1123,17 @@ _**Useful resources**_
 - [Constructor Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#using_a_constructor_function)
 
 - [Prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
+
+- [Window: navigator property](https://developer.mozilla.org/en-US/docs/Web/API/Window/navigator#example_1_browser_detect_and_return_a_string)
+
+- [Browser detection using the user agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent)
+
+- [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date);
+
+- [DOM getBoundingClientRect():](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect);
+
+## Working with events
+
+### Event propagation
+
+### Drag and Drop
