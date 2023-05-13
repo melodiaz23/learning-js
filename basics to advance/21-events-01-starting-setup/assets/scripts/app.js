@@ -84,6 +84,7 @@ class ProjectItem {
     this.updateProjectListsHandler = updateProjectListsFunction;
     this.connectMoreInfoButton();
     this.connectSwitchButton(type);
+    this.connectDrag();
   }
 
   showMoreInfoHandler() {
@@ -101,6 +102,14 @@ class ProjectItem {
     );
     tooltip.attach();
     this.hasActiveTooltip = true;
+  }
+
+  connectDrag(){
+    document.getElementById(this.id).addEventListener('dragstart', event => {
+      event.dataTransfer.setData('text/plain', this.id);
+      event.dataTransfer.effectAllowed = 'move';
+    })
+
   }
 
   connectMoreInfoButton() {
@@ -140,6 +149,31 @@ class ProjectList {
       );
     }
     console.log(this.projects);
+    this.connectDroppable();
+  }
+
+  connectDroppable(){
+    const list = document.querySelector(`#${this.type}-projects ul`);
+
+    list.addEventListener('dragenter', event => {
+      if (event.dataTransfer.types[0] === 'text/plain'){
+        list.parentElement.classList.add('droppable');
+        event.preventDefault();
+      }
+    });
+
+    list.addEventListener('dragover', event => {
+      if (event.dataTransfer.types[0] === 'text/plain'){
+        event.preventDefault();
+      }
+    });
+
+    list.addEventListener('dragleave', event => {
+      if (event.relatedTarget.closest(`#${this.type}-projects ul`) !== list){
+        list.parentElement.classList.remove('droppable');
+      }
+    })
+
   }
 
   setSwitchHandlerFunction(switchHandlerFunction) {
@@ -171,11 +205,11 @@ class App {
       activeProjectsList.addProject.bind(activeProjectsList)
     );
 
-    const timerId = setTimeout(this.startAnalytics, 3000);
+    // const timerId = setTimeout(this.startAnalytics, 3000);
 
-    document.getElementById('stop-analytics-btn').addEventListener('click', () => {
-      clearTimeout(timerId);
-    });
+    // document.getElementById('stop-analytics-btn').addEventListener('click', () => {
+    //   clearTimeout(timerId);
+    // });
   }
 
   static startAnalytics() {
