@@ -38,3 +38,13 @@ dragleave: Fired when the dragged element leaves a drop target. This event is of
 dragend: Fired when the drag operation is complete, either because the element was dropped onto a drop target or because the drag was canceled. This event is used to perform any necessary cleanup, such as removing the drag image or resetting the data transfer object.
 
 drop: Fired when the dragged element is dropped onto a drop target. This event is used to handle the drop, such as by processing the data that was transferred or updating the UI to reflect the drop.
+
+**RESOURCES**
+
+- Events (MDN): https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+
+- Events Reference (MDN): https://developer.mozilla.org/en-US/docs/Web/Events
+
+- Event Object (MDN): https://developer.mozilla.org/en-US/docs/Web/API/Event
+
+- MDN Drag & Drop: https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
