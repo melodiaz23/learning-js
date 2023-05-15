@@ -1,5 +1,34 @@
 # Notes
 
+## Numbers
+
+        Number.MAX_SAFE_INTEGER // Max number JS can produce (integer number);
+
+        number.toFixed(?fractionDigits) // Amount of digit we want to.
+
+        parseInt(s) // Convert to an integer.
+
+        bigInt(s) // Convert a number to a big int.
+
+        isFinity() or Number.isFinitive()// To check if it's a Infinity number
+
+        Math.random() // Random number between 0 and 1.
+
+        Math.floor() // floor round the number DOWN to the nearest integer.
+
+## Strings
+
+        string.ToUpperCase();
+        string.startsWith('') // To check if start with a certain secuence.
+        string.trim() // To remove extra white space.
+        userInput.includes('') // To find if a string includes something.
+        string.match() // allows us to match a string against a regular expression and returns an array of matches
+
+
+## Validations
+
+variable.test() // Validate if somthing meet one pattern.
+
 ## DOM
 
 **querySelector** => allows you to select an element on the page using a CSS selector.

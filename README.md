@@ -1163,8 +1163,54 @@ _**Useful resources**_
 
 - [DOM getBoundingClientRect():](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect);
 
-## Working with events
+# Numbers
 
-### Event propagation
+In JS every number is a float.
 
-### Drag and Drop
+    Number.MAX_SAFE_INTEGER // Max number JS can produce (integer number);
+
+## Floating point (im)precisions
+
+To find a number in the binary system.
+
+    (1).toString(2); // "1"
+
+To get precision in terms or number we can multiply the number with 100.
+
+## BigInt type
+
+Represent it with an 'n' at the end of the number.
+
+# Strings
+
+""
+''
+``
+
+With backticks (``) we can create strings with embedded expressions.
+
+## Regular expressions
+
+Help us search for patterns. A regular expression describes a pattern wich we try to find in some text in a string.
+
+    new RegExp()
+
+We also can use literal notation, like this:
+
+/^\S+/@\S+$/  => regular expression. We can look up in google like email js regex.
+
+With that, we can verify an email address. We use the test() method.
+
+regex are case sensitive. A way to validate it is this way: 
+
+    /(h|H)ello/  // we are saing validate it with upper or lower case.
+
+    /.ello/   // If the starting character is not relevant, we can put it this way.
+
+    /^\S+@\S+\./    // the dot notation is for say that we are looking for the dot character.
+
+**links**
+
+- Regular expressions: https://www.youtube.com/watch?v=0LKdKixl5Ug&list=PL55RiY5tL51ryV3MhCbH8bLl7O_RZGUUE
+
+- Tagged templates (MDN): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates
