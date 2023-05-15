@@ -636,13 +636,44 @@ bind() -> create a new reference at a function which it returns to us, which wil
 
 ### call () & apply ()
 
-___
-
 **Useful resources & links**
 
 [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) -> More on Functions (MDN)
 
 [Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) -> bind ()
+
+### Functions advanced concepts
+
+#### Pure and impure functions
+
+With pure functions, same arguments always produce the same output and not trigger any side effects.
+
+Withe impure functions we can't predict the output. And is also considere impure if introduce side effects (change anything outside the function).
+
+#### Factory functions
+
+Functions that produce another function.
+
+#### Closures
+
+Every functions in JS is a clousure.
+
+Each functions has his own lexical evironment.
+
+Closures means that every function closes over the surrounding environment wich means it register the surrounding evironment and the variables registred there and it memorizes the values of these variables.
+
+Functions remember the surrounding variables.
+
+#### Recursion
+
+The function call itself.
+
+**Useful links**
+
+More on Closures (MDN): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+Recursion (MDN): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Recursion
+
 
 ## HTML, DOM & JS
 
