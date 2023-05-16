@@ -1214,3 +1214,13 @@ regex are case sensitive. A way to validate it is this way:
 - Regular expressions: https://www.youtube.com/watch?v=0LKdKixl5Ug&list=PL55RiY5tL51ryV3MhCbH8bLl7O_RZGUUE
 
 - Tagged templates (MDN): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates
+
+# Asynchronous code
+
+## What is 'Async code'?
+
+Single-thereaded means JS can only execute one task at a time.
+
+## Callbacks
+## Promises 
+## Async / Await
