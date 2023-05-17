@@ -1221,6 +1221,34 @@ regex are case sensitive. A way to validate it is this way:
 
 Single-thereaded means JS can only execute one task at a time.
 
+Lecture 351.
+
 ## Callbacks
+
+Is a function that is passed as an argument to another function and is executed at a certain point in the execution od that function.
+
+**event loop**: Is part of the host environment of JS. 
+
 ## Promises 
+
+A promise can be pending, or be resolved or have an error.
+
+PENDING => Promise is doing work, neither then() nor catch() executes at this moment
+
+RESOLVED => Promise is resolved => then() executes
+
+REJECTED  => Promise was rejected => catch() executes
+
+
+
 ## Async / Await
+
+Is only use with functions.
+
+async in front of a function and await in front of a promise inside of that function.
+
+**LINKS**
+
+- More on Promises: https://developers.google.com/web/fundamentals/primers/promises
+
+- More on async/ await: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function

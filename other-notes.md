@@ -25,9 +25,11 @@
         string.match() // allows us to match a string against a regular expression and returns an array of matches
 
 
-## Validations
+## Validations and error handling
 
 variable.test() // Validate if somthing meet one pattern.
+
+.catch();
 
 ## DOM
 
@@ -46,6 +48,18 @@ variable.test() // Validate if somthing meet one pattern.
 **event.dataTransfer.setData()** => method to set the data that will be transferred. The first argument to this method is the data format, and the second argument is the data itself.
 
 **event.relatedTarget** => relatedTarget represents the element that the dragged item left to in order to trigger the dragleave event.
+
+## Location
+
+navigator.geolocation.getCurrentPosition(); => Get the user location, takes as arguments: 
+
+- Success callback function: This is a required argument and should be a function that will be invoked when the geolocation request is successful.
+
+- Error callback function: This is an optional argument, but it is good practice to provide an error callback function to handle any errors that may occur during the geolocation request.
+
+## Time
+
+setTimeout(callback, timeout);
 
 #### Drag and drop
 
@@ -77,3 +91,7 @@ drop: Fired when the dragged element is dropped onto a drop target. This event i
 - Event Object (MDN): https://developer.mozilla.org/en-US/docs/Web/API/Event
 
 - MDN Drag & Drop: https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
+
+## Constructor function - Class Build in JS
+
+new Promise();
