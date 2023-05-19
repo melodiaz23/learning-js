@@ -39,7 +39,13 @@ variable.test() // Validate if somthing meet one pattern.
 
 **closest( )** => Find the closest ancestor of an element that matches a given selector.
 
+'document.importNode()' -> clone the content.
 
+'template.content' -> get a DocumentFragment object that represents the content of the template.
+
+## Document interface
+
+**importNode()** -> This method is used to import a node from another document into the current document. It creates a copy of the specified node, including its descendants, and returns the imported node.
 
 ## Events
 
@@ -95,3 +101,12 @@ drop: Fired when the dragged element is dropped onto a drop target. This event i
 ## Constructor function - Class Build in JS
 
 new Promise();
+
+## JSON
+
+JSON.parse ->  JSON data to JS.
+JSON.stringify -> JS TO JSON data.
+
+or...
+
+.responseType = 'json' -> preconfigured to JS

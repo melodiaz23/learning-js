@@ -1252,3 +1252,17 @@ async in front of a function and await in front of a promise inside of that func
 - More on Promises: https://developers.google.com/web/fundamentals/primers/promises
 
 - More on async/ await: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+# Network requests
+
+API = Aplication Programing Interface.
+
+## XMLHttpRequest & Fetch() API
+
+## JSON Data & FormData
+
+JavaScript Object Notation
+
+JSON data supports objects ({}), arrays ([]), strings (MUST use double-quotes!), numbers (NO quotes) and booleans (also NO quotes).
+
+## GETing Data, POSTing Data
