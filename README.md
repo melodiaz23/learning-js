@@ -1272,3 +1272,13 @@ JSON data supports objects ({}), arrays ([]), strings (MUST use double-quotes!),
 - More on fetch(): https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 - Uploading Files: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
+
+# Third party libraries
+
+    Utility functions.
+
+- Are essentially packages of code.
+- Pre-written funtion to be use on our project.
+
+
+JS -> 
