@@ -1266,3 +1266,9 @@ JavaScript Object Notation
 JSON data supports objects ({}), arrays ([]), strings (MUST use double-quotes!), numbers (NO quotes) and booleans (also NO quotes).
 
 ## GETing Data, POSTing Data
+
+**LINKS**
+
+- More on fetch(): https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+- Uploading Files: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications

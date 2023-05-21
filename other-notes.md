@@ -55,6 +55,10 @@ variable.test() // Validate if somthing meet one pattern.
 
 **event.relatedTarget** => relatedTarget represents the element that the dragged item left to in order to trigger the dragleave event.
 
+**event.currentTarget** -> Property is a property available on event objects in JavaScript. It represents the element on which the event listener is attached, regardless of the element on which the event was originally triggered.
+
+When an event is triggered and an event listener is invoked, the currentTarget property refers to the element to which the event listener was attached.
+
 ## Location
 
 navigator.geolocation.getCurrentPosition(); => Get the user location, takes as arguments: 
@@ -110,3 +114,9 @@ JSON.stringify -> JS TO JSON data.
 or...
 
 .responseType = 'json' -> preconfigured to JS
+
+## HTTP Requests
+
+xhr.responseType -> // The browser will automatically parse the response as JSON and convert the result into a JavaScript object. 
+
+fetch() -> Is promise base
