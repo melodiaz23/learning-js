@@ -1280,5 +1280,8 @@ JSON data supports objects ({}), arrays ([]), strings (MUST use double-quotes!),
 - Are essentially packages of code.
 - Pre-written funtion to be use on our project.
 
+    - Lodash (Utility, small tasks)
+    - jQuery (May help to work with the DOM)
+    - Axios (Popular for sending HTTPrequests)
 
-JS -> 
+npmjs.com -> Repository
