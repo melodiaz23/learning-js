@@ -1285,3 +1285,21 @@ JSON data supports objects ({}), arrays ([]), strings (MUST use double-quotes!),
     - Axios (Popular for sending HTTPrequests)
 
 npmjs.com -> Repository
+
+# JS Modules - Multifile Codes
+
+
+# JS Frameworks
+
+JS libraries -> Third party packages that add funcionalities.
+JS Frameworks -> Third party packages that add funcionalities AND rules (structrure). e.g: Angular, Vue.js and react.js (edge-case).
+
+## React JS
+
+Uses 'enhanced JS' syntax (jsx). Is a JS library* for building user interfaces (pseudo framework).
+
+    Declarative approach: You define the result, not the steps that lead to the result.
+    Imperative approach ('normal JS'): We define all the steps to achive the result.
+
+In REACT we define components and build our UI with these components.
+
