@@ -121,4 +121,4 @@ xhr.responseType -> // The browser will automatically parse the response as JSON
 
 fetch() -> Is promise base
 
-globalThis.() -> store and read data
+globalThis.() -> store and read data.
