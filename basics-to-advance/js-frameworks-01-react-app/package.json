@@ -1,0 +1,34 @@
+{
+  "name": "javascript-complete-guide-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-router-dom": "^5.1.1",
+    "react-scripts": "3.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build:dev": "export NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && webpack",
+    "build:prod": "export NODE_OPTIONS=--openssl-legacy-provider &&webpack --config webpack.config.prod.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
