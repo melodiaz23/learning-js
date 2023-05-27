@@ -16,13 +16,26 @@ So, react is:
 - Declarative, component focused approach.
 - It could be use to control parts of HTML or to control de ENTIRE frontend (SPA - Single-page-application).
 
-To started a JS project: 
+**To started a JS project:**
 
 - https://create-react-app.dev/
 - https://vitejs.dev/
 
+With vite: 
+
+npm create vite (first time)
+npm init vite
+
+On the console: 
+npm install
+npm run dev
 
 ## Components and building UIs
+
+- Components are functions that return tipically, JSX code.
+
+- This code is executed multiple times, this mean we get separated 'component instances'.
+
 
 ## Working with events and Data
 
