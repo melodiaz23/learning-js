@@ -30,6 +30,10 @@ On the console:
 npm install
 npm run dev
 
+npm install icons  // Install library
+
+raect router -> npm install react-router-dom   
+
 ## Components and building UIs
 
 - Components are functions that return tipically, JSX code.
