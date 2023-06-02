@@ -30,6 +30,8 @@ On the console:
 npm install
 npm run dev
 
+npm start // run back
+
 npm install icons  // Install library
 
 raect router -> npm install react-router-dom   
