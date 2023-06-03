@@ -1,0 +1,25 @@
+{
+  "name": "27-tooling-01-starting-project",
+  "version": "1.0.0",
+  "description": "Javascript - Guide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack",
+    "build:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "webpack": "^5.85.0",
+    "webpack-cli": "^5.1.1"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
