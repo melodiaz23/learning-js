@@ -1288,6 +1288,54 @@ npmjs.com -> Repository
 
 # JS Modules - Multifile Codes
 
+# Tooling and workflows
+
+A development server - webpack-dev-server
+Bundling Tool (Combine multiple files) - Webpack
+Code optimization tool - Webpack Optimizer
+
+Code compilation tool - Babel
+
+Code quality checker - ESLint
+
+We nee: 
+    npm - Node Package Manager (allow us to install diferent tools)
+    NodeJS
+
+For npm: 
+
+    npm init
+    npm install --save-dev eslint (install ESlint in the project )
+
+oficial documentation: 
+https://www.npmjs.com/package/eslint
+
+
+for install webpack
+    npm install --save-dev webpack webpack-cli
+
+To run webpack:
+
+    npm run build
+
+for install webpack-dev-server
+
+    npm install --save-dev webpack-dev-server
+    // serve (live re-load)
+
+For dev:
+
+    npm run build:dev
+
+For production:
+
+    npm run build:prod
+
+** usefull links**
+
+Official ESLint Docs: https://eslint.org/
+
+Official Webpack Docs: https://webpack.js.org
 
 # JS Frameworks
 
