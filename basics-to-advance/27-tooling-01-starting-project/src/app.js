@@ -1,5 +1,3 @@
-/* eslint-disable semi */
-/* eslint-disable indent */
 import { ProjectList } from './App/ProjectList.js';
 
 globalThis.DEFAULT_VALUE = 'MAX';
