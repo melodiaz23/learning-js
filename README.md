@@ -1337,6 +1337,25 @@ Official ESLint Docs: https://eslint.org/
 
 Official Webpack Docs: https://webpack.js.org
 
+# BROWSER STORAGE
+
+- Local storage, session storage: 
+    - Simple key-value store
+    - Manage user preferences or basic user-data
+    - Can be cleared by the user and via JS
+    - Session storage data lives as long as we have the page open in the browser
+    - Local storage is never cleare unless the user clears it manually or the browser clears it.
+
+- Cookies
+    - Simple key-value store (some config options)
+    - Manage user preferences
+    - Can be clear by the user and via JS 
+
+- IndexedDB
+    - Relatively sophisticated, client-side database
+    - Manage complex data
+    - Can be clear by the user and via JS 
+
 # JS Frameworks
 
 JS libraries -> Third party packages that add funcionalities.
