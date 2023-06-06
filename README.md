@@ -1356,6 +1356,8 @@ Official Webpack Docs: https://webpack.js.org
     - Manage complex data
     - Can be clear by the user and via JS 
 
+Using indexedDB: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+
 # JS Frameworks
 
 JS libraries -> Third party packages that add funcionalities.
@@ -1369,5 +1371,6 @@ Uses 'enhanced JS' syntax (jsx). Is a JS library* for building user interfaces (
     Imperative approach ('normal JS'): We define all the steps to achive the result.
 
 In REACT we define components and build our UI with these components.
+
 
 
