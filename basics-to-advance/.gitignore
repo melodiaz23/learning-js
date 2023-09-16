@@ -1,0 +1,23 @@
+# Ignorar archivos y directorios generados por Angular CLI en la carpeta y sus subcarpetas
+/dist/
+/node_modules/
+**/*.js
+**/*.js.map
+**/*.css
+**/*.css.map
+**/*.ngsummary.json
+**/*.ngfactory.ts
+
+# Ignorar archivos de configuración locales en la carpeta y sus subcarpetas
+/src/environments/environment.ts
+/src/environments/environment.prod.ts
+
+# Ignorar archivos de registro y temporales en la carpeta y sus subcarpetas
+/logs/
+/tmp/
+**/*.log
+**/*.tmp
+
+# Ignorar archivos específicos del sistema operativo en la carpeta y sus subcarpetas
+Thumbs.db
+.DS_Store
