@@ -1215,6 +1215,19 @@ regex are case sensitive. A way to validate it is this way:
 
 - Tagged templates (MDN): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates
 
+# JS and browser support
+
+Sources: 
+- MDN
+- Can I Use
+- Google
+- ES6/JS Compat table
+
+## Transpile code
+
+For installing transpiler (babel-loader);
+    npm install --save-dev babel-loader @babel/core @babel/preset-env 
+
 # Asynchronous code
 
 ## What is 'Async code'?
@@ -1298,7 +1311,7 @@ Code compilation tool - Babel
 
 Code quality checker - ESLint
 
-We nee: 
+We need: 
     npm - Node Package Manager (allow us to install diferent tools)
     NodeJS
 
@@ -1374,3 +1387,29 @@ In REACT we define components and build our UI with these components.
 
 
 
+** New project
+
+    npm init // (to start a new project)
+    npm install server --save-dev lite-server
+    // then add to the scrips "start": "lite-server"
+    npm start
+    npm install
+
+    tsc --init
+    tsc --watch
+
+    git init
+    git commit -m 'first commit'
+    git remote add origin <url>
+    git push -u origin master  
+
+    npm install --save-dev typescript ts-loader
+
+        npm install --save-dev webpack-dev-serverwebpack webpack-cli typescript ts-loader
+
+
+Note: 
+If npm start doesn't work, replace on package.json: 
+    "start": "react-scripts start"
+to
+    "start": "react-scripts --openssl-legacy-provider start"
