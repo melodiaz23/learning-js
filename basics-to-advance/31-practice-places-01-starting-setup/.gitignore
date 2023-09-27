@@ -1,0 +1,36 @@
+# Node.js / npm
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Dependiendo de tu preferencia, también puedes ignorar yarn.lock
+# yarn.lock
+
+# Environment variables
+.env
+
+# Log files
+logs/
+*.log
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directories
+pids/
+logs/
+results/
+*.pid
+*.seed
+*.pid.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Compiled binary addons (node-sass, etc.)
+build/
