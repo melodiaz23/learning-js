@@ -10,22 +10,44 @@
       content="width=device-width, initial-scale=1.0" />
     <title>Web Components</title>
     <style>
-      div {
-        border: 2px solid orange;
+      * {
+        box-sizing: border-box;
       }
+      html {
+        /* To assign a variable name to css */
+        --color-primary: lightblue;
+        font-family: sans-serif;
+      }
+
+      div {
+        border: 2px solid rgb(206, 177, 125);
+      }
+
+      /* md-tooltip {
+        border: 1px solid blue;
+        padding: 0.15rem;
+      } */
+
+      /* .highlight {
+        background-color: rgb(245, 153, 120);
+      } */
+
     </style>
     <script src="tooltip.js"></script>
     <script src="confirm-link.js"></script>
   </head>
   <body>
     <p>
-      <md-tooltip text="Web components is a set of standards"
-        >Web Components</md-tooltip
+      <md-tooltip class="important" text="Web components is a set of standards">
+        <span class="highlight">
+          Web Components
+        </span> 
+        </md-tooltip
       >
       are awesome!
     </p>
-    <md-tooltip>this text</md-tooltip>
-    <div>This does not get the web componente styles, because the shadow DOM</div>
+    <md-tooltip></md-tooltip>
+    <!-- <div>This does not get the web componente styles, because the shadow DOM</div> -->
     <a is="md-confirm-link" href="http://www.google.com">Google</a>
   </body>
 </html>
