@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Web Components</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body{
+        margin: 2rem;
+        font-family: sans-serif;
+      }
+    </style>
     <script src="modal.js"></script>
   </head>
   <body>
-    <md-modal></md-modal>
+    <md-modal>
+      <p>with your confirmation you agree to pay the full amount!</p>
+    </md-modal>
+    <p>Please confirm your choice.</p>
+    <button id="confirm">Show details & Confirm</button>
+    <script>
+      const confirmButton = document.querySelector('button');
+      const modal = document.querySelector('md-modal');
+      confirmButton.addEventListener('click', ()=>{
+        modal.setAttribute('opened', '');
+      })
+    </script>
   </body>
 </html>
