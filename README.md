@@ -1,6 +1,5 @@
 # Javascript Notes
 
-_'Tal vez no sepa lo que haga, pero luzco genial hacíendolo'_
 
 * Dynamic, weakly typed.
 * Compiled at run time.
