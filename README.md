@@ -1,5 +1,8 @@
-# Javascript Notes
+# JS Notes
 
+# Classes
+
+Blueprints for objects.
 
 * Dynamic, weakly typed.
 * Compiled at run time.
@@ -53,10 +56,12 @@ Another way to do it is with a for-of loop...
 ### For-of loop
 Execute for every element for every element in an **array**.
 
-	for (const el of array)
-	{
-	console.log(el);
-	}
+```js
+for (const el of array)
+{
+console.log(el);
+}
+```
 
 e.g:
 
@@ -129,38 +134,7 @@ Resources: [JavaScript Loops Made Easy](https://www.youtube.com/watch?v=Kn06785p
     console.log(sum); // ???
 
 
-0
-I=0
-J=5
-Sum = 5
 
-J = 4
-Sum=9
-
-j= 3
-Sum=12
-
-
-I=1
-j=5
-Sum= 18
-
-j=4
-Sum= 23
-
-j=3
-Sum=27
-
-
-I=2
-j=5
-Sum=34
-
-j=4
-Sum=40
-
-j=3
-Sum=45
 
 
 What does the following loop produce as output?
@@ -173,26 +147,7 @@ What does the following loop produce as output?
 	}
 	console.log(sum); // ???
 
-I = 0
-j=5
-Sum = 5
-j=4
-Sum=4
-j=3
-Sum=3
 
-
-
-I=1
-j=5
-j=4
-j=3
-
-I=2
-j=5
-j=4
-j=3
-Sum=5
 
 
 _**Task**_
@@ -678,12 +633,12 @@ Recursion (MDN): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/F
 
 ### The Document Object Model (DOM) 
 
-> * Is the loaded and rendered HTML code. In other words the object representations of the code which the browser creates behind the scnes into which we can tap with JS.
-> * Is a programming interface (API)
-> * DOM represents the content of xml or HTML document as tree structure.
-> * With DOM we can easily read, access, update the contents of the document.
-> * DOM - Document (file), Object (tag elements), Model (layout structure)
-> * DOM is not strictly tied to browsers, there are other tools thay can parse HTML.
+- Is the loaded and rendered HTML code. In other words the object representations of the code which the browser creates behind the scnes into which we can tap with JS.
+- Is a programming interface (API)
+- DOM represents the content of xml or HTML document as tree structure.
+* With DOM we can easily read, access, update the contents of the document.
+* DOM - Document (file), Object (tag elements), Model (layout structure)
+ * DOM is not strictly tied to browsers, there are other tools thay can parse HTML.
 
 **Resources:** [DOM Introduction on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
@@ -694,9 +649,11 @@ We got certain methods/funcionalities, that allows us to reach out the loaded HT
 
 **BROWSER** 
 
-    <body>
-    <h1>Welcome!</h1>
-    </body>
+```html
+<body>
+<h1>Welcome!</h1>
+</body>
+```
 
 * When that html document is downloaded, the browser goes over it and parsed it and rendered it.
 * Provides the JS engine which in the end parses and understands all the JS code. 
@@ -710,20 +667,24 @@ ____
 -> Provides acces to elemente querying, DOM content etc. 
 -> It is part of the window object.
 
-If we type on console: 
-    document //Access to the document object
+If we type: 
+```
+document //Access to the document object
+console.dir(document) // To get a look into the real js object. 
 
-    console.dir(document) // To get a look into the real js object. 
-
+```
 **Window object**
 -> Global object
 -> The active browser window/tab. The global storage for the script. 
 -> Acts as a global storage for script, also provides access to window-specific properties and methods. 
 
 If we type on console:
-    window // To get access to the window object.
-    // Gives us access to all the core APIs that the browser wants to exposes to us.
-    // The windows always looks in the window object if we're calling or accessing something.
+```Sh
+window 
+```
+>// To get access to the window object.
+// Gives us access to all the core APIs that the browser wants to exposes to us.
+// The windows always looks in the window object if we're calling or accessing something.
 
 ### Nodes & elements
 
@@ -773,28 +734,39 @@ There are some selection methods.
 
 **ID**
 
-    document.getElementById(<ID>);
+```js
+document.getElementById(<ID>);
+```
 > Takes an ID (without #, just the id name) and returns the element that has this id. Since the same ID shouldn't occur more than once on your page, it'll always return exactly that one element. Returns null if no element with the specified ID could be found.
 
-    document.getElementById('The id')
-    // We use it only if we want to get and element by ITS ID. Because it is a unique element.
+```
+document.getElementById('The id')
+```
+>We use it only if we want to get and element by ITS ID. Because it is a unique element.
 
 And to get and idea for what is in the object:
-    console.dir(document.getElementById("The id"))
-    // The output here is the object the browser creates and exposes to us in JS. 
 
+```js
+console.dir(document.getElementById("The id"))
+// The output here is the object the browser creates and exposes to us in JS. 
+```
 > With document. and some selection method we can searh in the entire document.
 
 **Class**
 
-    document.getElementsByClassName(<CSS CLASS>);
+```js
+document.getElementsByClassName(<CSS CLASS>);
+```
 > Takes a CSS class g (e.g. 'some-class') and returns a live HTMLCollection of matched elements in your DOM. Returns an empty HTMLCollection if not matching elements were found.
 
-    document.getElementsByClassName('the class')
-    // This will return a so called HTMLCollection object which in the end is like an array.
+```js
+document.getElementsByClassName('the class')
+// This will return a so called HTMLCollection object which in the end is like an array.
+```
 
-    document.getElementsByTagName(<HTML TAG>);
-
+```
+document.getElementsByTagName(<HTML TAG>);
+```
 > Takes an HTML tag (e.g. 'p') and returns a live *HTMLCollection* of matched elements in your DOM. Returns an empty HTMLCollection if not matching elements were found.
 
 [**Query selector**](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
@@ -812,7 +784,9 @@ And to get and idea for what is in the object:
 
 With query selector is also possible to use a CSS selector.
 
-    document.querySelectorAll(<CSS selector>);
+```js
+document.querySelectorAll(<CSS selector>);
+```
 > Takes any CSS selector (e.g. '#some-id', '.some-class' or 'div p.some-class') and returns all matching elements in the DOM as a static (non-live) *NodeList*. Returns and empty NodeList if no matching element could be found.
 
     document.querySelectorAll('.the-class')
@@ -825,11 +799,17 @@ or, more complex way like:
 
 **ALSO** we have special properties on the document object to select parts of the document:
 
-* document.body => Selects the <body> element node.
-* document.head => Selects the <head> element node.
-* document.documentElement => Selects the <html> element node.
+* document.body => Selects the `<body>` element node.
+* document.head => Selects the `<head>` element node.
+* document.documentElement => Selects the `<html>` element node.
 
+##### `importNode`
 
+This method is used to import a node from another document or to create a copy of a node from one document into another document.
+
+```ts
+const importedNode = document.importNode(this.templateElement.content, true); // This way we import the content of template element.
+```
 ### Evaluating & manipulating DOM nodes
 
 p.textContent -> To read content (get access to all text or to set new content)
@@ -918,9 +898,8 @@ Throught classList we get access to some methods. e.g:
 #### Creating elements
 
 * HTML string 
-    **-> innerHTML:** if we want to set new elements. It will replace all the HTML content
-    
-    **-> insertAdjacentHTML():** Allow us to target a position and them define wich one HTML we we want to enter.
+	* **innerHTML:** if we want to set new elements. It will replace all the HTML content
+	* **insertAdjacentHTML():** Allow us to target a position and them define wich one HTML we we want to enter.
 
     * _sintax_
     insertAdjacentHTML(position, element)
@@ -941,7 +920,8 @@ createElement(tagName, options)
 
 #### Inserting elements
 
-    *-> appendChild() / append* -> with appendChild() we insert the DOM element we create. With append we also can add a string.*
+appendChild() / append* 
+-> with appendChild() we insert the DOM element we create. With append we also can add a string.*
     *-> prepend(), before(), after(), insertBefore()*
         - prepend(): it insert a element we create to the first element. For IE: element.insertBefore().
         - before() - after(): before or after the element. (IE and safari has problem with bafore and after)
@@ -951,8 +931,9 @@ createElement(tagName, options)
 
 Another way to insert an element: 
 
-        element.insertAdjacentHTML(posición, texto); -> Has better browser support
-    
+```js
+element.insertAdjacentElement(position, texto); -> Has better browser support
+```
 > _position_
 > 'beforebegin': Before the targetElement itself.
 > 'afterbegin': Just inside the targetElement, before its first child.
@@ -972,15 +953,20 @@ To copied elements:
 
 or, another way could be: 
 
-    element.parentElement.removeChild() // In parenthesis, the item we want to delete.
-    This is supported in ALL browsers
+```js
+element.parentElement.removeChild() 
+// In parenthesis, the item we want to delete.
+```
+>This is supported in ALL browsers.
 
 #### Text nodes
 
 We can easily create & insert text nodes in one go:
 
-    someElement.textContent = 'Hi there!';
-    // This creates and inserts the text node with a content of 'Hi there!'.
+```js
+someElement.textContent = 'Hi there!';
+// This creates and inserts the text node with a content of 'Hi there!'.
+```
 
 to append to existing text:
 
@@ -1386,7 +1372,7 @@ In REACT we define components and build our UI with these components.
 
 
 
-** New project
+### New project
 
     npm init // (to start a new project)
     npm install server --save-dev lite-server
