@@ -1,6 +1,6 @@
 # JS Notes
 
-These notes capture the concepts and topics I covered as I explored the world of JavaScript. They serve as a record of my learning journey, documenting key concepts and code snippets. I hope you find these notes insightful and useful. 
+These notes capture the concepts and topics I covered as I started exploring JavaScript. They serve as a record of my learning journey, documenting key concepts and code snippets. I hope you find these notes insightful and useful. 
 
 # Classes
 
